@@ -4,7 +4,8 @@ A Wonderful Theme for Hexo
 
 > see docs at: https://volantis.js.org
 
-
+去掉图片，加载太慢...
+<!-- 
 ![](https://i.loli.net/2020/03/18/f5PQlWisvm9zbgK.jpg)
 
 ![](https://i.loli.net/2020/03/18/XWBGf95E2t1bdnl.jpg)
@@ -15,5 +16,6 @@ A Wonderful Theme for Hexo
 
 ![](https://i.loli.net/2020/03/18/ySw8zGHRBrDtUg7.png)
 
-![](https://i.loli.net/2020/03/18/5QTMYsScOz41Vhg.png)
+![](https://i.loli.net/2020/03/18/5QTMYsScOz41Vhg.png) 
+-->
 
