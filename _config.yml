@@ -344,7 +344,7 @@ widget:
 
 footer:
   # layout of footer: [aplayer, social, license, info, copyright]
-  layout: [info, copyright]
+  layout: [copyright, info]
   social:
     #- icon: fas fa-rss
     #  url: atom.xml
@@ -354,7 +354,7 @@ footer:
       url: https://github.com/qinxs
     - icon: fas fa-headphones-alt
       url: https://music.163.com/#/playlist?id=2341823700
-  copyright: '[Copyright © 2017-2020 Mr. Q](https://qinxs.github.io/)'
+  copyright: '[Copyright <span style="font-size:150%">©</span> 2018-2020 | Mr. Q](https://qinxs.github.io/)'
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: '<br>'
 
