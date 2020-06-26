@@ -424,7 +424,7 @@ plugins:
     fade: 1500            # fade duration (ms) (Not more than 1500)
     images:               # For personal use only. At your own risk if used for commercial purposes !!!
       # - /img/bg.jpg
-      - https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/img/bg.jpg
+      - https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/img/bg1.jpg
       # - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg
       # - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/BBC19066-E176-47C2-9D22-48C81EE5DF6B.jpeg
       # - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/B18FCBB3-67FD-48CC-B4F3-457BA145F17A.jpeg
@@ -603,4 +603,4 @@ info:
   docs: https://volantis.js.org/ # This is theme's URL.
   cdn:
     js: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/app.js
-    css: https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/css/style.css
+    css: https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/css/style2.css
