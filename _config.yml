@@ -162,7 +162,7 @@ layout:
   # 文章布局，参数继承自 on_page
   on_post:
     # 文章页脚，自动在每一篇文章末尾添加
-    article_footer: [references, related_repos]  # copyright, donate
+    article_footer: [references, related_repos, copyright]  # donate
   # 其他的页面布局暂时等于 on_list
 
 
@@ -200,7 +200,7 @@ meta:
     icon_duration: fas fa-hourglass-half
   # 文章标签
   tags:
-    icon: fas fa-hashtag
+    icon: fas fa-tag
   # 分享
   share:
     - id: qq
@@ -352,7 +352,7 @@ footer:
       url: mailto:qinxs@sina.cn
     - icon: fab fa-github
       url: https://github.com/qinxs
-    - icon: fas fa-headphones-alt
+    - icon: fas fa-music
       url: https://music.163.com/#/playlist?id=2341823700
   copyright: '[Copyright <span style="font-size:150%">©</span> 2018-2020 | Mr. Q](https://qinxs.github.io/)'
   # You can add your own property here. (Support markdown, for example: br: '<br>')
