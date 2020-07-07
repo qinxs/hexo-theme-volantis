@@ -4,17 +4,24 @@
 <body>
   <%- partial('_partial/cover') %>
   <div class="l_body<%- page.cover ? '' : ' nocover' %>">
-    <div class='body-wrapper'>
+    <div class='body-wrapper' id="pjax-container">
+      <% if (theme.plugins.pjax.enable) { %>
+        <%- partial('_third-party/pjaxdata') %>
+      <% } %>
       <%- body %>
-      <script>setLoadingBarProgress(60);</script>
     </div>
+    <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
     <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
   </div>
-  <%- partial('_partial/scripts') %>
+  <div>
+    <%- partial('_partial/scripts') %>
+    <% if (theme.plugins.pjax.enable) { %>
+      <%- partial('_third-party/pjax') %>
+    <% } %>
+  </div>
   <!-- 页面点击小红心 -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/js/love.js"></script>
   <!-- 飘动的彩带背景 -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/js/piao.js"></script>
-  <script>setLoadingBarProgress(100);</script>
 </body>
 </html>

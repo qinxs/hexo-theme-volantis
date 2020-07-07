@@ -116,7 +116,7 @@ cover:
       url: https://volantis.js.org/examples/
     - name: 源码
       icon: fas fa-file-code
-      url: https://github.com/xaoxuu/hexo-theme-volantis/
+      url: https://github.com/theme-volantis/hexo-theme-volantis/
       rel: external nofollow noopener noreferrer
       target: _blank
     - name: 鸣谢
@@ -142,7 +142,7 @@ layout:
   # 文章列表（主页、自定义的列表）布局
   on_list:
     # 列表中每一篇文章的meta信息
-    meta: [title, date, category, wordcount, top] # author
+    meta: [title, date, category, wordcount, pin] # author
     # 列表类页面的侧边栏
     sidebar: [announce, category, tagcloud] # sidebar
     # read more button
@@ -155,7 +155,7 @@ layout:
     # 其中，title只在header中有效，music和thumbnail无需在这里设置，文章中有则显示
     # 如果tags放置在meta.header中，那么在post列表中不显示（因为卡片下方已经有了）
     meta:
-      header: [title, author, date, category, wordcount, top]
+      header: [title, author, date, category, wordcount, pin]
       footer: [updated, tags, btns, share]
     # 文章页面的侧边栏
     sidebar: [qrcode, toc]
@@ -189,11 +189,15 @@ meta:
   category:
     icon: fas fa-folder-open
   # 文章置顶
-  top:
+  pin:
     icon: fas fa-angle-double-up
   # 文章浏览计数
   counter:
     icon: fas fa-eye
+  # 文章评论数量：只支持 valine
+  valinecount:
+    icon: fas fa-comment-dots
+    desc: '' # 条评论
   # 文章字数和阅读时长
   wordcount:
     icon_wordcount: fas fa-keyboard
@@ -344,7 +348,7 @@ widget:
 
 footer:
   # layout of footer: [aplayer, social, license, info, copyright]
-  layout: [copyright, info]
+  layout: [aplayer, copyright, info]
   social:
     #- icon: fas fa-rss
     #  url: atom.xml
@@ -390,9 +394,9 @@ plugins:
   # https://scrollrevealjs.org/api/reveal.html
   scrollreveal:
     js: https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js
-    distance: 8px
+    distance: 32px
     duration: 800 # ms
-    interval: 100 # ms
+    interval: 20 # ms
     scale: 1 # 0.1~1
 
   # Codeblock Copy Button
@@ -453,12 +457,19 @@ plugins:
     # Optional
     fixed: false      # enable fixed mode
     theme: '#1BCDFC'  # main color
-    autoplay: false   # audio autoplay
+    autoplay: true   # audio autoplay
     order: list       # player play order, values: 'list', 'random'
     loop: all         # player loop play, values: 'all', 'one', 'none'
     volume: 0.5       # default volume, notice that player will remember user setting, default volume will not work after user set volume themselves
     list_max_height: 340px # list max height
     list_folded: true
+  pjax:
+    enable: true
+    timeout: 5000        # The timeout in milliseconds for the XHR requests. Set to 0 to disable the timeout.
+    cacheBust: false     # When set to true, Pjax appends a timestamp  to skip the browser cache.
+    animation: nprogress # nprogress, circle
+    banUrl:              # 被屏蔽的 url 地址将不启用 pjax 跳转，可以在控制台下使用 window.location.pathname 获取
+      # - '/about/index.html'
 
   # Artitalk https://artitalk.js.org
   # 配置过程请参考：https://artitalk.js.org/doc.html
@@ -485,11 +496,11 @@ plugins:
 comments: 
   title: <i class='fas fa-comments'></i> 用户交流区
   subtitle:
-  service: valine # valine, minivaline, disqus, gitalk, livere
+  service: valine # valine, minivaline, disqus, gitalk, vssue, livere
   # Valine
   # https://valine.js.org/
   # https://github.com/DesertsP/Valine-Admin
-  valine:
+  valine: # 请将 appId appKey 修改为自己的，否则评论数据是共享的。
     appId:  # your appId
     appKey:  # your appKey
     js: https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js
@@ -579,7 +590,7 @@ comments:
 search:
   enable: true
   service: hexo  # hexo, google, algolia, azure, baidu
-  js: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js
+  # js: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@3.0/js/search.js
   google:
     apiKey:
     engineId:
@@ -599,8 +610,8 @@ search:
 ############################### Theme Information ###############################
 info:
   name: Volantis # This is theme's name.
-  version: '2.6.6' # This is theme's version.
+  version: '3.0-beta1' # This is theme's version.
   docs: https://volantis.js.org/ # This is theme's URL.
   cdn:
-    js: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/app.js
-    css: https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/css/style2.css
+    js: https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/js/app.js
+    css: https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/css/style.css
