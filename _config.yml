@@ -496,7 +496,7 @@ plugins:
 comments: 
   title: <i class='fas fa-comments'></i> 用户交流区
   subtitle:
-  service: valine # valine, minivaline, disqus, gitalk, vssue, livere
+  service: valine # valine, minivaline, disqus, gitalk, vssue, livere, isso
   # Valine
   # https://valine.js.org/
   # https://github.com/DesertsP/Valine-Admin
@@ -580,6 +580,11 @@ comments:
   # https://www.livere.com
   livere:
     uid:
+  # Isso
+  # https://posativ.org/isso/
+  isso:
+    url: https://example.com/(path/)
+    src: https://example.com/(path/)js/embed.min.js
 
 
 
