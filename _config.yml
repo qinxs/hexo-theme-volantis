@@ -2,6 +2,7 @@
 style:
   font_smoothing: false # font-smoothing for webkit
   max_width: 1080px # Sum of body width and sidebar width (This limit will be exceeded when the device width is greater than 2000px, reaching 75% of the total width)
+  background-image: url(https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/img/rip_jobs.png)
   scrollbar:
     size: 4px
     border: 2px
@@ -420,7 +421,7 @@ plugins:
 
   # Slide Background
   backstretch:
-    enable: true
+    enable: false
     js: https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js
     position: fixed       # cover: sticky on the cover.   fixed: Fixed as background for the site.
     shuffle: true         # shuffle playlist
@@ -619,4 +620,4 @@ info:
   docs: https://volantis.js.org/ # This is theme's URL.
   cdn:
     js: #https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/js/app.js
-    css: https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/css/style.css
+    css: #https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/css/style.css
