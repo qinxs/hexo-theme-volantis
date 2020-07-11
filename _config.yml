@@ -117,7 +117,7 @@ cover:
       url: https://volantis.js.org/examples/
     - name: 源码
       icon: fas fa-file-code
-      url: https://github.com/theme-volantis/hexo-theme-volantis/
+      url: https://github.com/volantis-x/hexo-theme-volantis/
       rel: external nofollow noopener noreferrer
       target: _blank
     - name: 鸣谢
@@ -497,7 +497,7 @@ plugins:
 comments: 
   title: <i class='fas fa-comments'></i> 用户交流区
   subtitle:
-  service: valine # valine, minivaline, disqus, gitalk, vssue, livere, isso
+  service: valine # valine, minivaline, disqus, gitalk, vssue, livere, isso, hashover
   # Valine
   # https://valine.js.org/
   # https://github.com/DesertsP/Valine-Admin
@@ -586,7 +586,10 @@ comments:
   isso:
     url: https://example.com/(path/)
     src: https://example.com/(path/)js/embed.min.js
-
+  # HashOver
+  # https://www.barkdull.org/software/hashover
+  hashover:
+    src: https://example.com/(path/)comments.php
 
 
 
@@ -618,6 +621,7 @@ info:
   name: Volantis # This is theme's name.
   version: '3.0-beta1' # This is theme's version.
   docs: https://volantis.js.org/ # This is theme's URL.
+  repo: https://github.com/volantis-x/hexo-theme-volantis
   cdn:
     js: #https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/js/app.js
     css: #https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/css/style.css
