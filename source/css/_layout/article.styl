@@ -161,12 +161,21 @@
         display: inline-block
         margin-right: 5px
 
-
-
   blockquote
-    background: bgcolor($color-blockquote)
-    border-left: $border-codeblock solid $color-blockquote
-    border-radius: $border-codeblock
+    background: #6464640d
+    padding: .2em $gap
+    color: #646464
+    border-left: 3px solid #d3d3d3
+    border-radius: 3px
+
+  .article_footer
+    blockquote
+      padding: $gap-row + $fontoffset  $gap $gap-row $gap
+      background: bgcolor($color-blockquote)
+      border-width: 0 $border-codeblock
+      border-style: solid
+      border-color: $color-blockquote
+      border-radius: $border-codeblock
 
   blockquote
     &,p,ul,ol
@@ -177,7 +186,6 @@
       margin-bottom: $gap-row
     position: relative
     width: 100%
-    padding: $gap-row + $fontoffset  $gap $gap-row $gap
     trans()
     footer
       padding: 0
