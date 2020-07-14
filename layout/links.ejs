@@ -9,7 +9,6 @@
             <% if(group.items) { %>
               <div class='friends-group'>
                 <% if(group.group) { %>
-                  <br>
                   <h3 class='friend-header'>
                     <% if (group.icon) { %>
                       <i class="<%= group.icon %> fa-fw" aria-hidden="true"></i>
@@ -49,9 +48,10 @@
                 </div>
               </div>
             <%} %>
+            <br>
           <% }) %>
         <% } %>
-        <br><br>
+        <br>
         <%- page.more %>
       </section>
         <%- partial('_partial/meta',{post:page, position:'footer'}) %>
