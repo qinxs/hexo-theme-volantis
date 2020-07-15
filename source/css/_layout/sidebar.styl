@@ -348,6 +348,8 @@
   min-height: 100px
   meting-js
     max-width: 100%
+  if hexo-config('plugins.aplayer.fixed') == true
+    position: absolute;
 
 
 .aplayer
@@ -359,3 +361,7 @@
     text-align: left
   @media screen and (max-width: $device-mobile)
     border-radius: $border-card
+
+if hexo-config('plugins.aplayer.lrc_show') == false
+  .aplayer-lrc
+    display: none !important

@@ -134,7 +134,7 @@ navbar:
   menu:
     # The following can be written in `blog/source/_data/menu.yml`
     # ...
-  search: Search...   # Search bar placeholder
+  search: 搜一下~   # Search bar placeholder
 
 
 
@@ -456,7 +456,7 @@ plugins:
     type: playlist    # song, playlist, album, search, artist
     id: 7629598140    # song id / playlist id / album id / search keyword
     # Optional
-    fixed: false      # enable fixed mode
+    fixed: true      # enable fixed mode
     theme: '#1BCDFC'  # main color
     autoplay: true   # audio autoplay
     order: list       # player play order, values: 'list', 'random'
@@ -464,6 +464,7 @@ plugins:
     volume: 0.4       # default volume, notice that player will remember user setting, default volume will not work after user set volume themselves
     list_max_height: 340px # list max height
     list_folded: true
+    lrc_show: false   # 是否显示歌词 
   pjax:
     enable: true
     timeout: 10000        # The timeout in milliseconds for the XHR requests. Set to 0 to disable the timeout.
