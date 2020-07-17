@@ -1,5 +1,7 @@
 <article class="post white-box <%- theme.style.body.effect.join(' ') %> reveal <%= (post.title) ? "" : "no-title" %>">
-  <%- partial('meta',{post:post, position:'header'}) %>
+  <% if ((post.meta && post.meta.header && post.meta.header.length > 0) || ( (post.layout != 'page'))) { %>
+    <%- partial('meta',{post:post, position:'header'}) %>
+  <% } %>
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       <% if (post.excerpt) { %>
