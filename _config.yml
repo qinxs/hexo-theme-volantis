@@ -9,7 +9,7 @@ style:
     color: '#2196f3'
     hover: '#ff5722'
   navbar:
-    height: 64px
+    height: 56px
     width: auto # auto, max
     effect: [shadow, blur] # [shadow, floatable, blur]
   sidebar:
@@ -39,7 +39,7 @@ style:
     row: .5rem # Paragraph spacing between other elements
     line_height: 1.65 # normal, 1.5, 1.75, 2 ...
   border_radius:
-    card: 8px
+    card: 12px
     codeblock: 4px
     searchbar: 8px
     button: 4px
@@ -439,7 +439,8 @@ plugins:
     volume: 0.4       # default volume, notice that player will remember user setting, default volume will not work after user set volume themselves
     list_max_height: 340px # list max height
     list_folded: false
-    lrc_show: false   # 是否显示歌词 
+    lrc_show: false   # 是否显示歌词
+  
   pjax:
     enable: true
     timeout: 10000        # The timeout in milliseconds for the XHR requests. Set to 0 to disable the timeout.
