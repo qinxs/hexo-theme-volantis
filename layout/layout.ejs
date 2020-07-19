@@ -19,9 +19,27 @@
       <%- partial('_third-party/pjax/index') %>
     <% } %>
   </div>
+  <!-- 一言 -->
+  <script>
+    (function() {
+      const is_mobi = navigator.userAgent.toLowerCase().match(/(ipod|ipad|iphone|android|coolpad|mmp|smartphone|midp|wap|xoom|symbian|j2me|blackberry|wince)/i) != null;
+      var max_length = is_mobi ? 10 : 20;
+      fetch('https://v1.hitokoto.cn/?max_length='+max_length)
+        .then(function (res){
+          return res.json();
+        })
+        .then(function (data) {
+          window.hitokoto = data.hitokoto;
+          document.getElementById('hitokoto').innerText = window.hitokoto;
+        })
+        .catch(function (err) {
+          console.error(err);
+        })
+    })();
+  </script>
   <!-- 页面点击小红心 -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/js/clicklove.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/js/clicklove.js" defer></script>
   <!-- 飘动的彩带背景 -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/js/piao.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/js/piao.js" defer></script>
 </body>
 </html>
