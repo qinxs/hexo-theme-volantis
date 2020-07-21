@@ -30,7 +30,9 @@
         })
         .then(function (data) {
           window.hitokoto = data.hitokoto;
-          document.getElementById('hitokoto').innerText = window.hitokoto;
+          try{
+            document.getElementById('hitokoto').innerText = window.hitokoto;
+          }catch(e){};
         })
         .catch(function (err) {
           console.error(err);
