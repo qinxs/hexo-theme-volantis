@@ -1,10 +1,12 @@
 <% if (theme.comments.service && theme.comments.service.length > 0) { %>
   <article class="post white-box reveal comments <%- theme.style.body.effect.join(' ') %>">
     <section class="article typo">
-      <p ct><%- theme.comments && theme.comments.title %></p>
-      <% if (theme.comments && theme.comments.subtitle) { %>
-        <p cst><%- theme.comments.subtitle %></p>
-      <% } %>
+      <p ct>
+        <%- theme.comments && theme.comments.title %>
+        <% if (theme.comments && theme.comments.subtitle) { %>
+          <span cst><%- theme.comments.subtitle %></span>
+        <% } %>
+      </p>
       <section id="comments">
         <%- partial(theme.comments.service + '/layout') %>
       </section>
