@@ -53,7 +53,7 @@ style:
     h5: 1rem
     h6: 1rem
     body: .9375rem
-    list: 95%
+    list: .9375rem
     meta: .875rem
     code: .8125rem
     footnote: .75rem
@@ -597,7 +597,7 @@ search:
 ############################### Theme Information ###############################
 info:
   name: Volantis # This is theme's name.
-  version: '3.0-beta1' # This is theme's version.
+  version: '3.0-beta2' # This is theme's version.
   docs: https://volantis.js.org/ # This is theme's URL.
   repo: https://github.com/volantis-x/hexo-theme-volantis
   cdn:
