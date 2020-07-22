@@ -53,7 +53,7 @@ style:
     h5: 1rem
     h6: 1rem
     body: .9375rem
-    list: 95%
+    list: .9375rem
     meta: .875rem
     code: .8125rem
     footnote: .75rem
@@ -97,15 +97,16 @@ style:
 
 ############################### Layout ###############################
 # cover:
-#   scheme: blog # docs, blog
+#   scheme: docs # docs, blog
+#   layout: featured # search (搜索), featured (精选)
 #   display:
-#     home: false
-#     archive: false
+#     home: true
+#     archive: true
 #     others: false # can be written in front-matter 'cover: true'
-#   logo: #https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/256/google_logo.png
-#   title: Volantis
-#   subtitle: 'A Wonderful Theme for Hexo'
-#   search: # search bar placeholder
+#   logo: https://i.loli.net/2020/07/22/2OYbPxZjhdFce3L.png
+#   title: ''
+#   subtitle: ''
+#   search: A Wonderful Theme for Hexo # search bar placeholder
 #   features:
 #     - name: 文档
 #       icon: fas fa-book
@@ -129,7 +130,7 @@ style:
 # Navigation Bar
 navbar:
   logo: # choose [img] or [icon + title]
-    img:
+    img: #https://i.loli.net/2020/07/22/Xw9pZTkyhSPOY8M.png
     icon: fas fa-feather
     title: QinXS
   menu:
