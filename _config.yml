@@ -99,15 +99,16 @@ style:
 
 ############################### Layout ###############################
 # cover:
-#   scheme: blog # docs, blog
+#   scheme: docs # docs, blog
+#   layout: featured # search (搜索), featured (精选)
 #   display:
-#     home: false
-#     archive: false
+#     home: true
+#     archive: true
 #     others: false # can be written in front-matter 'cover: true'
-#   logo: #https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/256/google_logo.png
-#   title: Volantis
-#   subtitle: 'A Wonderful Theme for Hexo'
-#   search: # search bar placeholder
+#   logo: https://i.loli.net/2020/07/22/2OYbPxZjhdFce3L.png
+#   title: ''
+#   subtitle: ''
+#   search: A Wonderful Theme for Hexo # search bar placeholder
 #   features:
 #     - name: 文档
 #       icon: fas fa-book
