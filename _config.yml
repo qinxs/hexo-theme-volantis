@@ -326,7 +326,7 @@ widget:
     class: webinfo
     display: [desktop]
     header:
-      icon: fas fa-award
+      icon: fas fa-chart-line
       title: 站点信息
     type:
       article:
@@ -354,7 +354,7 @@ widget:
         enable: true
         friendlyShow: true    # 更友好的时间显示
         text: '最后活动时间：'
-        unit: '日'
+        unit: ''
 
   # You can add your own widget here or 'blog/source/_data/widget.yml'
   # class: text, list, grid, qrcode, page, ... see more at https://volantis.js.org/
@@ -373,7 +373,7 @@ footer:
       url: https://github.com/qinxs
     - icon: fas fa-music
       url: https://music.163.com/#/playlist?id=2341823700
-  copyright: '[Copyright <span style="font-size:150%">©</span> 2018-2020 | Mr. Q](https://qinxs.github.io/)'
+  copyright: '[Copyright <span style="font-size:1.4em">©</span> 2018-2020 By QinXS](https://7bxing.com)'
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: '<br>'
 
