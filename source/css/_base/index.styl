@@ -9,7 +9,8 @@ html
   width: 100%
   height: 100%
   font-family: $fontfamily
-  font-size: $fontsize-body
+  @media screen and (max-width: $modal-threshold)
+    font-size: $fontsize-body
   >
     if hexo-config('style.scrollbar.size')
       if hexo-config('style.scrollbar.color')
