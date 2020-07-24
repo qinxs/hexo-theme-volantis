@@ -334,8 +334,8 @@ widget:
         text: '文章数目：'
         unit: '篇'
       runtime:
-        enable: true
-        data: '2020/01/01'    # 填写建站日期
+        enable: false
+        data: '2020/06/26'    # 填写建站日期
         text: '已运行时间：'
         unit: '天'
       wordcount:
