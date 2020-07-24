@@ -320,6 +320,41 @@ widget:
     header:
       icon: fab fa-github
       title: 源码链接
+  # ---------------------------------------
+  # webinfo widget
+  webinfo:
+    class: webinfo
+    display: [desktop]
+    header:
+      icon: fas fa-award
+      title: 站点信息
+    type:
+      article:
+        enable: true
+        text: '文章数目：'
+        unit: '篇'
+      runtime:
+        enable: true
+        data: '2020/01/01'    # 填写建站日期
+        text: '已运行时间：'
+        unit: '天'
+      wordcount:
+        enable: true
+        text: '本站总字数：'   # 需要启用 wordcount
+        unit: '字'
+      siteuv:
+        enable: true
+        text: '本站访客数：'   # 需要启用 busuanzi
+        unit: '人'
+      sitepv:
+        enable: true
+        text: '本站总访问量：' # 需要启用 busuanzi
+        unit: '次'
+      lastupd:
+        enable: true
+        friendlyShow: true    # 更友好的时间显示
+        text: '最后活动时间：'
+        unit: '日'
 
   # You can add your own widget here or 'blog/source/_data/widget.yml'
   # class: text, list, grid, qrcode, page, ... see more at https://volantis.js.org/
@@ -408,7 +443,6 @@ plugins:
     fade: 1500            # fade duration (ms) (Not more than 1500)
     images:               # For personal use only. At your own risk if used for commercial purposes !!!
       # - /img/bg.jpg
-      - https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/img/bg1.jpg
       # - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg
       # - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/BBC19066-E176-47C2-9D22-48C81EE5DF6B.jpeg
       # - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/B18FCBB3-67FD-48CC-B4F3-457BA145F17A.jpeg
