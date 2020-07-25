@@ -28,19 +28,16 @@
         <div><%- markdown(__('footer.license')) %></div>
       <% } else if (item == 'info') { %>
         
-        驱动 
-        <a href="https://hexo.io/" target="_blank">Hexo</a>
-         | 主题 
-        <a href="https://volantis.js.org/" target="_blank">Volantis</a>
-         | CDN 
-        <a href="https://www.jsdelivr.com/" target="_blank">jsDelivr</a>
+        驱动 <a href="https://hexo.io/" target="_blank">Hexo</a>
+        | 主题 <a href="https://volantis.js.org/" target="_blank">Volantis</a>
+        | CDN <a href="https://www.jsdelivr.com/" target="_blank">jsDelivr</a>
 
       <% } else if (item == 'copyright') { %>
         <div class='copyright'>
         <%- markdown(theme.footer.copyright) %>
-        <i class="fas fa fa-heart"></i>
+        <i class="fas fa-heart"></i>
         <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span></i>
-        <i class="fas fa fa-heart"></i>
+        <i class="fas fa-heart"></i>
         </div>
       <% } else { %>
         <% if (item in theme.footer) { %>
