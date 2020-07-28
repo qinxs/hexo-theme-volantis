@@ -98,36 +98,7 @@ style:
 
 
 ############################### Layout ###############################
-# cover:
-#   scheme: docs # docs, blog
-#   layout: featured # search (搜索), dock (坞), featured (精选), focus (焦点)
-#   display:
-#     home: true
-#     archive: true
-#     others: false # can be written in front-matter 'cover: true'
-#   logo: https://i.loli.net/2020/07/22/2OYbPxZjhdFce3L.png
-#   title: ''
-#   subtitle: ''
-#   search: A Wonderful Theme for Hexo # search bar placeholder
-#   features:
-#     - name: 文档
-#       img: https://i.loli.net/2020/07/24/GaeXvVAdtJkCYT3.png
-#       icon: fas fa-book
-#       url: /v3/getting-started/
-#     - name: 帮助
-#       img: https://i.loli.net/2020/07/24/cxRslyWzk2OTP9r.png
-#       icon: fas fa-question-circle
-#       url: faqs/
-#     - name: 示例
-#       img: https://i.loli.net/2020/07/24/9kHJZNA8m4RBxhp.png
-#       icon: fas fa-play-circle
-#       url: /examples/
-#     - name: 社区
-#       img: https://i.loli.net/2020/07/24/skczZ1VdMGRbTLi.png
-#       icon: fas fa-fan fa-spin
-#       url: /contributors/
-
-
+# 此处删除了cover及相关参数
 
 # Navigation Bar
 navbar:
@@ -534,8 +505,8 @@ comments:
   # https://valine.js.org/
   # https://github.com/DesertsP/Valine-Admin
   valine: # 请将 appId appKey 修改为自己的，否则评论数据是共享的。
-    appId:  # your appId
-    appKey:  # your appKey
+    appId: # your appId
+    appKey: # your appKey
     js: https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js
     path: # All pages use the same path (share the same comments data)
     meta: nick,mail,link # valine comment header info
