@@ -1,0 +1,10 @@
+$text = url(hexo-config('style.cursor.text'))
+$pointer = url(hexo-config('style.cursor.pointer'))
+$default = url(hexo-config('style.cursor.default'))
+
+html
+  cursor: $default,auto!important
+a:not([class="notlink"]),a:not([class="notlink"]) *
+  cursor: $pointer,auto!important
+input,textarea
+  cursor: $text,auto!important
