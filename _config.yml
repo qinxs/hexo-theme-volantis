@@ -207,6 +207,7 @@ widget:
   blogger:
     class: blogger
     display: [desktop, mobile] # [desktop, mobile]
+    sticky: true
     avatar: https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/img/avatar.png
     shape: rectangle # circle, rectangle
     url: /about/
