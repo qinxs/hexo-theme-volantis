@@ -457,6 +457,7 @@ plugins:
     list_folded: false
     lrc_show: false   # 是否显示歌词
   
+
   pjax:
     enable: true
     timeout: 5000        # The timeout in milliseconds for the XHR requests. Set to 0 to disable the timeout.
@@ -610,8 +611,8 @@ comments:
 # 自定义右键菜单
 rightmenu:
   enable: false
-  # hr: 分割线, navigation: 导航按钮
-  layout: [copy, navigation, hr, home, help, examples, contributors, hr, source_docs, source_theme, hr, music]
+  # hr: 分割线, navigation: 导航按钮, music-ctrl: 音乐控制器
+  layout: [copy, navigation, hr, home, help, examples, contributors, hr, source_docs, source_theme, hr, music-ctrl]
   # 复制
   copy:
     name: 复制文本
