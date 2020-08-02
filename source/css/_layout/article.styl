@@ -122,6 +122,8 @@
     text-align: $textalign-p
     max-width: 100%
     line-height: inherit
+    @media screen and (min-width: $device-mobile)
+      font-size: 0.9375rem
 
   ul,ol
     font-size: $fontsize-list
@@ -186,12 +188,12 @@
     &,p,ul,ol
       text-align: left
       word-wrap: normal
-      font-size: $fontsize-list
+      font-size: 0.875rem
       margin-top: $gap-row
       margin-bottom: $gap-row
     position: relative
     width: 100%
-    padding: $gap + $fontoffset  $gap $gap $gap
+    padding: $gap * 0.5  $gap
     trans()
     footer
       padding: 0
