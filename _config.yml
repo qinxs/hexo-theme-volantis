@@ -8,7 +8,7 @@ style:
 
   font_smoothing: false # font-smoothing for webkit
   max_width: 1080px # Sum of body width and sidebar width (This limit will be exceeded when the device width is greater than 2000px, reaching 75% of the total width)
-  background-image: url(https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/img/rip_jobs.png)
+  background-image: url(https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/img/bg_box.png)
   # background-image: url(/img/bg.png)
   # background-image: url(/img/bg.jpg)
   scrollbar:
