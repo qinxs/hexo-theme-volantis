@@ -85,6 +85,8 @@ style:
       # url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf
       # weight: normal
       # style: normal
+    note-tag:
+      fontfamily: 'Font Awesome 5 Free'
   color:
   #   site: '#21232F' # Website background color
   #   site_inner: '#fff' # Text color inside the website background
@@ -373,6 +375,13 @@ seo:
 
 ############################### Plugins ###############################
 plugins:
+  # required plugins
+  fontawesome: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css
+  fontawesomeanimation: https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css
+  fancybox: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css
+  jquery: https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js
+
+  # optional plugins
   ######## Plugins to improve loading speed:
   # Preload (The menu's url must end with ‘/’)
   instant_page: https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/instant_page.js
@@ -421,28 +430,27 @@ plugins:
     fade: 1500            # fade duration (ms) (Not more than 1500)
     images:               # For personal use only. At your own risk if used for commercial purposes !!!
       # - /img/bg.jpg
-      # - https://gitee.com/wallpapers/minimalist/raw/master/2020/001.jpg
-      # - https://gitee.com/wallpapers/minimalist/raw/master/2020/002.jpg
-      # - https://gitee.com/wallpapers/minimalist/raw/master/2020/003.jpg
-      # - https://gitee.com/wallpapers/minimalist/raw/master/2020/004.jpg
-      # - https://gitee.com/wallpapers/minimalist/raw/master/2020/005.jpg
-      # - https://gitee.com/wallpapers/minimalist/raw/master/2020/006.jpg
-      # - https://gitee.com/wallpapers/minimalist/raw/master/2020/012.jpg
-      # - https://gitee.com/wallpapers/minimalist/raw/master/2020/016.jpg
-      # - https://gitee.com/wallpapers/minimalist/raw/master/2020/019.jpg
-      # - https://gitee.com/wallpapers/minimalist/raw/master/2020/025.jpg
-      # - https://gitee.com/wallpapers/minimalist/raw/master/2020/033.jpg
-      # - https://gitee.com/wallpapers/minimalist/raw/master/2020/034.jpg
-      # - https://gitee.com/wallpapers/minimalist/raw/master/2020/035.jpg
-      # - https://gitee.com/wallpapers/minimalist/raw/master/2020/038.jpg
-      # - https://gitee.com/wallpapers/minimalist/raw/master/2020/039.jpg
-      # - https://gitee.com/wallpapers/minimalist/raw/master/2020/042.jpg
-      # - https://gitee.com/wallpapers/minimalist/raw/master/2020/042.jpg
-      # - https://gitee.com/wallpapers/minimalist/raw/master/2020/046.jpg
-      # - https://gitee.com/wallpapers/minimalist/raw/master/2020/051.jpg
-      # - https://gitee.com/wallpapers/minimalist/raw/master/2020/052.jpg
-      # - https://gitee.com/wallpapers/minimalist/raw/master/2020/054.jpg
-      # - https://gitee.com/wallpapers/minimalist/raw/master/2020/056.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg
 
   # APlayer is only available in mainland China.
   # APlayer config: https://github.com/metowolf/MetingJS
@@ -519,6 +527,8 @@ plugins:
 comments: 
   title: <i class='fas fa-comments'></i> 用户交流区
   subtitle: '温馨提示: 遵纪守法, 友善评论!'
+  path:                    # 全局评论地址 仅支持 valine , miniValine , disqus , gitalk
+  placeholder: 快来评论吧~  # 评论占位提示 仅支持 valine & miniValine
   service: valine # valine, minivaline, disqus, gitalk, vssue, livere, isso, hashover
   # Valine
   # https://valine.js.org/
@@ -531,7 +541,6 @@ comments:
     meta: nick,mail,link # valine comment header info
     requiredFields: ['nick','mail']
     enableQQ: true # Unstable avatar link
-    placeholder: 快来评论吧~ # valine comment input placeholder(like: Please leave your footprints )
     avatar: robohash # gravatar style https://valine.js.org/avatar
     pageSize: 10 # comment list page size
     lang: zh-cn
@@ -545,8 +554,6 @@ comments:
     appKey: # your appKey
     js: https://cdn.jsdelivr.net/npm/minivaline@3/dist/MiniValine.min.js
     mode: xCss # DesertsP or xCss
-    placeholder: 快来评论吧~ # Comment box placeholder
-    path: # All pages use the same path (share the same comments data)
     math: false # Support MathJax.
     md: true # Support Markdown.
     enableQQ: false # Enable QQ avatar API.
@@ -590,6 +597,8 @@ comments:
   # https://disqus.com
   disqus:
     shortname:
+    # optional
+    autoload: false
   # Gitalk
   # https://gitalk.github.io/
   gitalk:
@@ -622,7 +631,7 @@ comments:
 # 自定义右键菜单
 rightmenu:
   enable: false
-  # hr: 分割线, navigation: 导航按钮, music-ctrl: 音乐控制器
+  # hr: 分割线, navigation: 导航按钮, music: 音乐控制器
   layout: [home, help, examples, contributors, hr, source_docs, source_theme, hr, print, hr, music]
   # 可选功能项
   print:
@@ -678,7 +687,7 @@ search:
 ############################### Theme Information ###############################
 info:
   name: Volantis # This is theme's name.
-  version: '3.0-beta2' # This is theme's version.
+  version: '3.0-beta6' # This is theme's version.
   docs: https://volantis.js.org/ # This is theme's URL.
   repo: https://github.com/volantis-x/hexo-theme-volantis
   cdn:
