@@ -6,7 +6,6 @@
   }
   %>
   <footer class="footer clearfix">
-    <br><br>
     <% layout.forEach(function(item){ %>
       <% if (item == 'social') { %>
         <br>
@@ -23,8 +22,8 @@
                   <img src="<%- value.avatar %>" style="border-radius:120px"/>
                 <% } %>
               </a>
-            <% } %>
-          <% }) %>
+            <%}%>
+          <%})%>
         </div>
       <% } else if (item == 'aplayer') { %>
         <div class="aplayer-container">
@@ -33,17 +32,18 @@
       <% } else if (item == 'license') { %>
         <div><%- markdown(__('footer.license')) %></div>
       <% } else if (item == 'info') { %>
-        <%- __('footer.use') %>
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/<%- theme.info.theme_version %>" target="_blank" class="codename">Volantis</a>
-        <%- __('footer.theme') %><% if (theme.analytics.busuanzi) { %><%- __('symbol.comma') %><%- __('footer.total_views') %>
-          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-          <%- __('footer.times') %>
-        <% } %>
-      <% } else if (item == 'source') { %>
-        <%- markdown(__('footer.site_source', '[Volantis](https://github.com/volantis-x/hexo-theme-volantis/tree/'+theme.info.theme_version+')', 'GitHub', 'https://github.com/volantis-x/volantis-docs')) %>
+        
+        <div class="github-badge"><span class="badge-subject" title="由 Hexo 强力驱动">Powered</span><a class="badge-value bg-red" rel="external nofollow noopener noreferrer" href="//hexo.io/" target="_blank" data-pjax-state="">Hexo</a></div>
+        <div class="github-badge"><span class="badge-subject" title="站点使用 Volantis 主题">Theme</span><a class="badge-value bg-orange" rel="external nofollow noopener noreferrer" href="//volantis.js.org/" target="_blank" data-pjax-state="">Volantis</a></div>
+        <div class="github-badge"><span class="badge-subject" title="jsDelivr 提供 CDN 加速服务">CDN</span><a class="badge-value bg-brightgreen" rel="external nofollow noopener noreferrer" href="//www.jsdelivr.com/" target="_blank" data-pjax-state="">jsDelivr</a></div>
+        <div class="github-badge"><span class="badge-subject" title="静态网页托管于 GitHub Pages 和 Coding Pages">Hosted</span><span class="badge-value bg-blue"><a rel="external nofollow noopener noreferrer" href="//github.com/" target="_blank" data-pjax-state="">GitHub</a> & <a rel="external nofollow noopener noreferrer" href="//coding.net/" target="_blank" data-pjax-state="">Coding</a></span></div>
+
       <% } else if (item == 'copyright') { %>
         <div class='copyright'>
         <%- markdown(theme.site_footer.copyright) %>
+        <i class="fas fa-heartbeat" style="font-size: 16px; color: rgba(255, 0, 0, 0.9)"></i>
+        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span></i>
+        <i class="fas fa-heartbeat" style="font-size: 16px; color: rgba(255, 0, 0, 0.9)"></i>
         </div>
       <% } else { %>
         <% if (item in theme.site_footer) { %>
@@ -53,3 +53,19 @@
     <% }) %>
   </footer>
 <% } %>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("06/26/2020 00:00:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
