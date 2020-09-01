@@ -22,5 +22,25 @@
       <%- partial('_third-party/pjax/index') %>
     <% } %>
   </div>
+  <!-- 一言 -->
+    <script>
+      (function() {
+        const isMobile = /mobile/i.test(window.navigator.userAgent);
+        var max_length = isMobile ? 10 : 20;
+        fetch('https://v1.hitokoto.cn/?max_length='+max_length)
+          .then(function (res){
+            return res.json();
+          })
+          .then(function (data) {
+            window.hitokoto = data.hitokoto;
+            try{
+              document.getElementById('hitokoto').innerText = window.hitokoto;
+            }catch(e){};
+          })
+          .catch(function (err) {
+            console.error(err);
+          })
+      })();
+    </script>
 </body>
 </html>
