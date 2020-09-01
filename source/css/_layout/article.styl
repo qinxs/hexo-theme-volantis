@@ -127,8 +127,16 @@
 
   blockquote
     background: var(--color-block)
-    border-left: $border-codeblock solid $color-theme
+    border-left: $border-codeblock solid #d3d3d3
     border-radius: $border-codeblock
+
+  .footer
+    blockquote
+      padding: $gap
+      background: #ecfbf7
+      border-width: 0 $border-codeblock
+      border-style: solid
+      border-color: $color-theme
 
   blockquote
     &,p,ul,ol
@@ -139,7 +147,7 @@
       margin-bottom: $gap-p
     position: relative
     width: 100%
-    padding: $gap
+    padding: .1em $gap
     trans()
     footer
       padding: 0
