@@ -42,7 +42,7 @@
         <div class='copyright'>
         <%- markdown(theme.site_footer.copyright) %>
         <i class="fas fa-heartbeat" style="font-size: 16px; color: rgba(255, 0, 0, 0.9)"></i>
-        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span></i>
+        <span>本站已运行 </span><span id="sitetime">载入中...</span>
         <i class="fas fa-heartbeat" style="font-size: 16px; color: rgba(255, 0, 0, 0.9)"></i>
         </div>
       <% } else { %>
@@ -54,18 +54,23 @@
   </footer>
 <% } %>
 <script>
-    var now = new Date(); 
-    function createtime() { 
-        var grt= new Date("06/26/2020 00:00:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
-        now.setTime(now.getTime()+250); 
-        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
-        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
-        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
-        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
-        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
-        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
-        document.getElementById("timeDate").innerHTML = "本站已运行 "+dnum+" 天 "; 
-        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
-    } 
-setInterval("createtime()",250);
+    /* 建站时间, 格式：月/日/年 时:分:秒 */
+    var grt = new Date("06/26/2020 00:00:00");
+    function createtime() {
+        var now = new Date();
+
+        dnum = Math.floor((now - grt ) / (24 * 3600 * 1000)); 
+        hnum = checkTime(now.getHours() - grt.getHours(), "h");
+        mnum = checkTime(now.getMinutes() - grt.getMinutes());
+        snum = checkTime(now.getSeconds() - grt.getSeconds());
+
+        function checkTime(i, type = "s") {
+          if (i < 0) { 
+            i = type == "h" ? i + 24 : i + 60;
+          }
+          return i < 10 ? "0" + i : i;
+        }
+        document.getElementById("sitetime").innerHTML = dnum + " 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    }
+setInterval("createtime()", 1000);
 </script>
