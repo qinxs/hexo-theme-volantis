@@ -53,24 +53,3 @@
     <% }) %>
   </footer>
 <% } %>
-<script>
-    /* 建站时间, 格式：月/日/年 时:分:秒 */
-    var grt = new Date("06/26/2020 00:00:00");
-    function createtime() {
-        var now = new Date();
-
-        dnum = Math.floor((now - grt ) / (24 * 3600 * 1000)); 
-        hnum = checkTime(now.getHours() - grt.getHours(), "h");
-        mnum = checkTime(now.getMinutes() - grt.getMinutes());
-        snum = checkTime(now.getSeconds() - grt.getSeconds());
-
-        function checkTime(i, type = "s") {
-          if (i < 0) { 
-            i = type == "h" ? i + 24 : i + 60;
-          }
-          return i < 10 ? "0" + i : i;
-        }
-        document.getElementById("sitetime").innerHTML = dnum + " 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
-    }
-setInterval("createtime()", 1000);
-</script>

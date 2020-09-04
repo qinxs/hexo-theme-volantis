@@ -72,6 +72,13 @@
   <% } %>
 <% } %>
 
+<% if (theme.myJS.enable) { %>
+  <% if (theme.myJS.js) { %>
+    <%- js(theme.myJS.js) %>
+  <% } else { %>
+    <%- js(['js/myJS.js']) %>
+  <% } %>
+<% } %>
 
 <% if (theme.plugins.nodewaves.enable) { %>
   <%- js({src: theme.plugins.nodewaves.js}) %>
