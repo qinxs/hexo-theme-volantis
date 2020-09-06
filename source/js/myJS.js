@@ -47,7 +47,7 @@ setInterval("createtime()", 1000);
 function dynamicLoadJs(url, callback) {
     var head = document.getElementsByTagName('head')[0];
     var script = document.createElement('script');
-    script.type = 'text/javascript';
+    script.defer = true;
     script.src = url;
     if (typeof(callback) == 'function') {
         script.onload = script.onreadystatechange = function() {
