@@ -32,18 +32,20 @@
       <% } else if (item == 'license') { %>
         <div><%- markdown(__('footer.license')) %></div>
       <% } else if (item == 'info') { %>
-        
-        <div class="github-badge"><span class="badge-subject" title="由 Hexo 强力驱动">Powered</span><a class="badge-value bg-red" rel="external nofollow noopener noreferrer" href="//hexo.io/" target="_blank" data-pjax-state="">Hexo</a></div>
-        <div class="github-badge"><span class="badge-subject" title="站点使用 Volantis 主题">Theme</span><a class="badge-value bg-orange" rel="external nofollow noopener noreferrer" href="//volantis.js.org/" target="_blank" data-pjax-state="">Volantis</a></div>
-        <div class="github-badge"><span class="badge-subject" title="jsDelivr 提供 CDN 加速服务">CDN</span><a class="badge-value bg-brightgreen" rel="external nofollow noopener noreferrer" href="//www.jsdelivr.com/" target="_blank" data-pjax-state="">jsDelivr</a></div>
-        <div class="github-badge"><span class="badge-subject" title="静态网页托管于 GitHub Pages 和 Coding Pages">Hosted</span><span class="badge-value bg-blue"><a rel="external nofollow noopener noreferrer" href="//github.com/" target="_blank" data-pjax-state="">GitHub</a> & <a rel="external nofollow noopener noreferrer" href="//coding.net/" target="_blank" data-pjax-state="">Coding</a></span></div>
-
+        <div style="line-height: 1em">
+          <div class="github-badge"><span class="badge-subject" title="由 Hexo 强力驱动">Powered</span><a class="badge-value bg-red" rel="external nofollow noopener noreferrer" href="//hexo.io/" target="_blank" data-pjax-state="">Hexo</a></div>
+          <div class="github-badge"><span class="badge-subject" title="站点使用 Volantis 主题">Theme</span><a class="badge-value bg-orange" rel="external nofollow noopener noreferrer" href="//volantis.js.org/" target="_blank" data-pjax-state="">Volantis</a></div>
+          <div class="github-badge"><span class="badge-subject" title="jsDelivr 提供 CDN 加速服务">CDN</span><a class="badge-value bg-brightgreen" rel="external nofollow noopener noreferrer" href="//www.jsdelivr.com/" target="_blank" data-pjax-state="">jsDelivr</a></div>
+          <div class="github-badge"><span class="badge-subject" title="静态网页托管于 GitHub Pages 和 Coding Pages">Hosted</span><span class="badge-value bg-blue"><a rel="external nofollow noopener noreferrer" href="//github.com/" target="_blank" data-pjax-state="">GitHub</a> & <a rel="external nofollow noopener noreferrer" href="//coding.net/" target="_blank" data-pjax-state="">Coding</a></span></div>
+        </div>
       <% } else if (item == 'copyright') { %>
         <div class='copyright'>
         <%- markdown(theme.site_footer.copyright) %>
-        <i class="fas fa-heartbeat" style="font-size: 16px; color: rgba(255, 0, 0, 0.9)"></i>
-        <span>本站已运行 </span><span id="sitetime">载入中...</span>
-        <i class="fas fa-heartbeat" style="font-size: 16px; color: rgba(255, 0, 0, 0.9)"></i>
+          <p>
+            <i class="fas fa-heartbeat" style="transform: scale(1.2); color: rgba(255, 0, 0, 0.9)"></i>
+            本站已运行 <span id="sitetime">载入中...</span>
+            <i class="fas fa-heartbeat" style="transform: scale(1.2); color: rgba(255, 0, 0, 0.9)"></i>
+          </p>
         </div>
       <% } else { %>
         <% if (item in theme.site_footer) { %>
