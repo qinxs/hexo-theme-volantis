@@ -104,12 +104,12 @@
         menuContent.classList.remove('top');
       }
 
-      let hrText = document.getElementById('hr-text');
-      let hrSrc = document.getElementById('hr-src');
-      let hrHref = document.getElementById('hr-href');
+      var hrText = document.getElementById('hr-text');
+      var hrSrc = document.getElementById('hr-src');
+      var hrHref = document.getElementById('hr-href');
 
       // 选中图片
-      let copySrc = document.getElementById('menu-copy-src');
+      var copySrc = document.getElementById('menu-copy-src');
       if (copySrc != undefined) {
         if (event.target.currentSrc) {
           copySrc.style.display = 'block';
@@ -125,7 +125,7 @@
 
       // 选中按钮
       // 判断是不是按钮
-      let href = '';
+      var href = '';
       if (event.path) {
         for (i = 0; i < event.path.length; i++) {
           if (event.path[i].href != undefined && event.path[i].href.length > 0) {
@@ -134,7 +134,7 @@
         }
       }
 
-      let copyText = document.getElementById('menu-copy-text');
+      var copyText = document.getElementById('menu-copy-text');
       copyText.style.display = 'none';
       hrText.style.display = 'none';
       if (href.length == 0) {
@@ -148,7 +148,7 @@
       }
 
       // 在新标签页打开
-      let openHref = document.getElementById('menu-open-href');
+      var openHref = document.getElementById('menu-open-href');
       if (openHref != undefined) {
         if (href.length > 0) {
           openHref.style.display = 'block';
@@ -162,7 +162,7 @@
         }
       }
       // 复制链接
-      let copyHref = document.getElementById('menu-copy-href');
+      var copyHref = document.getElementById('menu-copy-href');
       if (copyHref != undefined) {
         if (href.length > 0) {
           copyHref.style.display = 'block';
@@ -191,7 +191,7 @@
       document.getElementById('rightmenu-wrapper').style.display = 'none';
     }
     function copyString(str) {
-      const input = document.createElement('input');
+      var input = document.createElement('input');
       input.setAttribute('readonly', 'readonly');
       document.body.appendChild(input);
       input.setAttribute('value', str);

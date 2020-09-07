@@ -2,7 +2,7 @@
 if (item.rows == undefined) {
   item.rows = new Array();
   var itms = new Array();
-  let id = item.id || 'references';
+  var id = item.id || 'references';
   if (id in page) {
     (page[id]||[]).forEach(function(ref) {
       if (ref.name || ref.url) {

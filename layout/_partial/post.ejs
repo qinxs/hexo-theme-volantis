@@ -1,18 +1,18 @@
 <div class="post post-v3 white-box reveal <%- theme.custom_css.body.effect.join(' ') %>">
   <%
-  let showPin = false;
+  var showPin = false;
   if (post.pin && (post.title || theme.article.preview.auto_title) && theme.article.preview.pin_icon) {
     showPin = true;
   }
-  let showTitle = false;
+  var showTitle = false;
   if (theme.article.preview.auto_title || (post.title && (post.link || post.path))) {
     showTitle = true;
   }
-  let showCat = false;
+  var showCat = false;
   if (post.categories && post.categories.length > 0) {
     showCat = true;
   }
-  let showReadmore = false;
+  var showReadmore = false;
   if (theme.article.preview.readmore == 'always' || theme.article.preview.auto_excerpt || ((post.readmore != false) && (post.excerpt || post.description || post.link))) {
     showReadmore = true;
   }
@@ -31,7 +31,7 @@
   <% } %>
   <% if (showTitle) { %>
     <%
-    let pinTitle = false;
+    var pinTitle = false;
     if (showPin && !post.headimg) {
       pinTitle = true;
     }

@@ -37,11 +37,11 @@
   function pjax_valine() {
     if(!document.querySelectorAll("#valine_container")[0])return;
 
-    let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) || "<%= theme.comments.valine.placeholder %>";
+    var pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) || "<%= theme.comments.valine.placeholder %>";
 
-    let path = $.trim($('#pjax-comment-path').text());
+    var path = $.trim($('#pjax-comment-path').text());
     if (path.length == 0) {
-      let defaultPath = '<%= theme.comments.valine.path %>';
+      var defaultPath = '<%= theme.comments.valine.path %>';
       path = defaultPath || decodeURI(window.location.pathname);
     }
 

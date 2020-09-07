@@ -18,12 +18,12 @@
         $(".highlight .code pre").before(copyHtml);
         $(".article pre code").before(copyHtml);
         clipboard.off('success').on('success', function (e) {
-            let $btn = $(e.trigger);
+            var $btn = $(e.trigger);
             $btn.addClass('copied');
-            let $icon = $($btn.find('i'));
+            var $icon = $($btn.find('i'));
             $icon.removeClass('fa-copy');
             $icon.addClass('fa-check-circle');
-            let $span = $($btn.find('span'));
+            var $span = $($btn.find('span'));
             $span[0].innerText = 'COPIED';
             wait(function () {
                 $icon.removeClass('fa-check-circle');
@@ -33,12 +33,12 @@
         });
         clipboard.off('error').on('error', function (e) {
             e.clearSelection();
-            let $btn = $(e.trigger);
+            var $btn = $(e.trigger);
             $btn.addClass('copy-failed');
-            let $icon = $($btn.find('i'));
+            var $icon = $($btn.find('i'));
             $icon.removeClass('fa-copy');
             $icon.addClass('fa-times-circle');
-            let $span = $($btn.find('span'));
+            var $span = $($btn.find('span'));
             $span[0].innerText = 'COPY FAILED';
             wait(function () {
                 $icon.removeClass('fa-times-circle');

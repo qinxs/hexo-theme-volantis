@@ -56,7 +56,7 @@
     }
     if (theme.seo && theme.seo.use_tags_as_keywords) {
       if (!keywords && page.tags && page.tags.length > 0) {
-        let tags = page.tags.map(function(t){return t.name}).join(',');
+        var tags = page.tags.map(function(t){return t.name}).join(',');
         if (tags.length > 0) {
           keywords += tags;
         }

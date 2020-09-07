@@ -27,7 +27,7 @@
         var targetUrl = e.triggerElement.href;
         var banUrl = <%- '["' + banUrl.join('", "') + '"]' %>;
         if (banUrl[0] != "") {
-          banUrl.forEach(item => {
+          banUrl.forEach(function(item) {
             if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
               window.location.href = targetUrl;
             }
@@ -105,7 +105,7 @@
           }
         <% } %>
         <% if (theme.plugins.highlightjs.enable) { %>
-        document.querySelectorAll('pre code').forEach((block) => {
+        document.querySelectorAll('pre code').forEach(functon(block) {
           hljs.highlightBlock(block);
         });
         <% } %>

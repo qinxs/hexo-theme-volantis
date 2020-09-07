@@ -30,7 +30,7 @@ if (page.sidebar == false) {
 }
 
 if (config.theme_config && config.theme_config.style) {
-  let style = config.theme_config.style;
+  var style = config.theme_config.style;
   if (style.navbar && style.navbar.effect) {
     theme.custom_css.navbar.effect = style.navbar.effect;
   }

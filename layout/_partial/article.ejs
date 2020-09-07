@@ -15,7 +15,7 @@
     </div>
   <% } %>
   <% if (['post','docs'].includes(page.layout)) { %>
-    <% let footer_widget = theme.article.body.footer_widget; %>
+    <% var footer_widget = theme.article.body.footer_widget; %>
     <div class='footer'>
       <% if (page.references && page.references.length > 0) { %>
         <div class='references'>
@@ -74,8 +74,8 @@
   <% } %>
   <% if ((post.group != undefined) && (post.order != undefined)) { %>
     <%
-    let prev = new Object();
-    let next = new Object();
+    var prev = new Object();
+    var next = new Object();
     site.pages.each(function(p){
       if ((p.title || p.seo_title) && p.path && (p.group == post.group)) {
         if (p.order < post.order && (p.order > prev.order || prev.order == undefined)) {

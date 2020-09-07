@@ -12,7 +12,7 @@
     </div>
 		<div class="nav-main">
       <% if (theme.navbar.logo) { %>
-        <% let logo = theme.navbar.logo %>
+        <% var logo = theme.navbar.logo %>
         <a class="title flat-box" target="_self" href='<%- url_for("/") %>'>
           <% if (logo.img) { %>
             <img no-lazy class='logo' src='<%- logo.img %>'/>
@@ -29,7 +29,7 @@
 			<div class='menu navigation'>
 				<ul class='nav-list-h m-pc'>
           <%
-          let menu_list = theme.navbar.menu;
+          var menu_list = theme.navbar.menu;
           %>
           <% function menu(value, type) { %>
             <% if (value.name == 'hr') { %>

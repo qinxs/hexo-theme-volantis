@@ -10,7 +10,7 @@ var enableCover = false;                      // 封面是否开启
 var frontMatterCover = 'none';                // 封面控制 
  
 if (theme.comments.service && theme.comments.service.length > 0) { 
-  let service = theme.comments.service; 
+  var service = theme.comments.service; 
   if (page.comments == undefined || page.comments != false) { 
     if (service in page) { 
       if (page[service].path) { 
