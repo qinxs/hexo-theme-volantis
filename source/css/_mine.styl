@@ -72,10 +72,16 @@
 .vcards
   >.vcard
     margin-bottom: 10px
-    border: 1px dashed #44d7b6
+    border: 1px dashed rgba(68,68,68,.3)
     border-radius: 10px
+    &:hover
+      border: 1px dashed #44d7b6
   .vmeta
     .vat
-      padding-right: 10px
+      font-size: 0.875em !important
+      color: $color-theme !important
+      transform: translate(-1em, -1.75em)
+      &:hover
+        color: $color-hover !important
   .vquote
-    padding-left: 0 !important 
+    padding-left: 0 !important
