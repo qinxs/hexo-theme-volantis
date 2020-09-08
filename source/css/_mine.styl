@@ -72,16 +72,24 @@
 .vcards
   >.vcard
     margin-bottom: 10px
+    padding: 0 .5em
     border: 1px dashed rgba(68,68,68,.3)
     border-radius: 10px
     &:hover
       border: 1px dashed #44d7b6
-  .vmeta
+  .vcard
     .vat
       font-size: 0.875em !important
       color: $color-theme !important
-      transform: translate(-1em, -1.75em)
-      &:hover
-        color: $color-hover !important
+      transform: translateY(-1.75em)
   .vquote
     padding-left: 0 !important
+
+@media screen and (min-width: $device-mobile)
+  .vcards
+    .vcard
+      .vat
+        opacity: 0
+      &:hover
+        .vat
+          opacity: 1
