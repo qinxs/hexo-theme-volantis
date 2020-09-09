@@ -5,20 +5,21 @@
       content: "摘要："
       font-weight: 900
   >p
-    padding-top: 4px
-    margin-top: .1em
-    margin-bottom: .1em
+    margin: 16px 0
+  @media screen and (max-width: $device-mobile)
+    margin: 17px 0
+    font-size: 17px
 
   h1
     font-size: 1.6em !important
     line-height: 1.6em !important
   h2
-    margin-top: 1.4 * $gap
+    margin-top: 1.8 * $gap
     font-size: 1.5em
     line-height: 1.5em
     border-bottom: 1px dotted #a6acab
   h3
-    margin-top: $gap
+    margin-top: 1.2 * $gap
     font-size: 1.4em
     line-height: 1.4em
     border-bottom: 1px dotted #a6acab
@@ -64,11 +65,15 @@
         input
           margin-right: 4px
 
+    @media screen and (max-width: $device-mobile)
+      font-size: 16px
 
   ul>li
     list-style: initial
+    line-height: 1.8em
   ol>li
     list-style: decimal
+    line-height: 1.8em
 
   .div-ori-link
     display: block
@@ -84,3 +89,7 @@
     &:hover
       color: $color-hover
       border-color: $color-hover
+
+  pre
+    font-size: .9rem !important
+    //line-height: 1.6 !important
