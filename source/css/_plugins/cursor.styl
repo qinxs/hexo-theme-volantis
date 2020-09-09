@@ -2,7 +2,8 @@ $text = url(hexo-config('custom_css.cursor.text'))
 $pointer = url(hexo-config('custom_css.cursor.pointer'))
 $default = url(hexo-config('custom_css.cursor.default'))
 
-html
-  cursor: $default,auto !important
-a:not([class="notlink"])
-  cursor: $pointer,auto !important
+@media screen and (min-width: $device-mobile)
+  html
+    cursor: $default,auto !important
+  a:not([class="notlink"])
+    cursor: $pointer,auto !important
