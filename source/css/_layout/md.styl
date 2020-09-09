@@ -1,14 +1,15 @@
 // 以后关于 md 渲染方面的都写到这里
 .md
+  @media screen and (max-width: $device-mobile)
+    margin-top: -0.5 * $gap
+    >p
+      font-size: 17px
   .article-meta+p:not(.p)
     &:before
       content: "摘要："
       font-weight: 900
   >p
     margin: 16px 0
-  @media screen and (max-width: $device-mobile)
-    margin: 17px 0
-    font-size: 17px
 
   h1
     font-size: 1.6em !important

@@ -20,5 +20,9 @@ $textshadow = 0 1px 2px 0px rgba(0, 0, 0, 0.1)
   box-shadow: $boxshadow-card
   &.floatable
     trans()
-    &:hover
-      box-shadow: $boxshadow-card-float
+
+@media screen and (min-width: 500px)
+  .shadow
+    &.floatable    
+      &:hover
+        box-shadow: $boxshadow-card-float
