@@ -3,7 +3,7 @@
 /*一言*/
 (function() {
     var isMobile = /mobile/i.test(window.navigator.userAgent);
-    var max_length = isMobile ? 10 : 20;
+    var max_length = isMobile ? 9 : 20;
     fetch('https://v1.hitokoto.cn/?max_length=' + max_length)
         .then(function(res) {
             return res.json();
@@ -38,6 +38,25 @@ function createtime() {
     document.getElementById("sitetime").innerHTML = dnum + " 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
 }
 setInterval("createtime()", 1000);
+
+/*禁止ios双击缩放*/
+if(/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)){
+    window.onload=function () {
+        document.addEventListener('touchstart',function (event) {
+            if(event.touches.length>1){
+                event.preventDefault();
+            }
+        });
+        var lastTouchEnd=0;
+        document.addEventListener('touchend',function (event) {
+            var now=(new Date()).getTime();
+            if(now-lastTouchEnd<=300){
+                event.preventDefault();
+            }
+            lastTouchEnd=now;
+        },false);
+    }
+}
 
 /**
  * 动态加载JS
