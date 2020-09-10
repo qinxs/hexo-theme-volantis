@@ -88,11 +88,11 @@
       font-size: 0.875em !important
       color: $color-theme !important
       transform: translateY(-1.75em)
-  @media screen and (min-width: $device-mobile)
-    .vat
-      opacity: 0
-    &:hover
+    @media screen and (min-width: $device-mobile)
       .vat
-        opacity: 1
+        opacity: 0
+      &:hover
+        .vat
+          opacity: 1
   .vquote
     padding-left: 0 !important
