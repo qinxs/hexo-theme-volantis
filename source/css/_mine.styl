@@ -11,31 +11,37 @@
     &:hover
       text-decoration: none !important
 
-	.badge-subject
-	  display: inline-block
-	  background-color: #4d4d4d
-	  padding: 4px 4px 4px 6px
-	  border-radius: 4px 0 0 4px
-	
-	.badge-value
-		display: inline-block
-		padding: 4px !important
-		border-radius: 0 4px 4px 0
+  .badge-subject
+    display: inline-block
+    background-color: #4d4d4d
+    padding: 3px 4px !important
+    border-radius: 3px 0 0 3px
+    @media screen and (max-width: $device-mobile)
+      padding: 4px !important
+      border-radius: 4px 0 0 4px
+  
+  .badge-value
+    display: inline-block
+    padding: 3px 4px !important
+    border-radius: 0 3px 3px 0
+    @media screen and (max-width: $device-mobile)
+      padding: 4px !important
+      border-radius: 0 4px 4px 0
 
-	.bg-red
-		background-color: #e05d44
+  .bg-red
+    background-color: #e05d44
 
-	.bg-orange
-		background-color: orange
+  .bg-orange
+    background-color: orange
 
-	.bg-brightgreen
-		background-color: #4dc820
+  .bg-brightgreen
+    background-color: #4dc820
 
-	.bg-blue
-		background-color: #007ec6
+  .bg-blue
+    background-color: #007ec6
 
-	.bg-blueviolet
-		background-color: #8833d7
+  .bg-blueviolet
+    background-color: #8833d7
 
 // 嵌入iframe
 .bilibili
@@ -82,14 +88,11 @@
       font-size: 0.875em !important
       color: $color-theme !important
       transform: translateY(-1.75em)
+  @media screen and (min-width: $device-mobile)
+    .vat
+      opacity: 0
+    &:hover
+      .vat
+        opacity: 1
   .vquote
     padding-left: 0 !important
-
-@media screen and (min-width: $device-mobile)
-  .vcards
-    .vcard
-      .vat
-        opacity: 0
-      &:hover
-        .vat
-          opacity: 1
