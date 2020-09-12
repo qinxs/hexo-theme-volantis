@@ -87,14 +87,16 @@ details[open]
       &:after
         content: '-'
   >div.content
-    padding: $gap
+    //padding: $gap
     margin: 0 - $gap
     margin-top: 0
     p>a:hover
       text-decoration: underline
     >
-      p,.tabs,ul,ol,.highlight,.note,details
+      p,.tabs,ul,ol,.note,details
         &:first-child
-          margin-top: 0
+          margin: 0 $gap $gap
         &:last-child
-          margin-bottom: 0
+          margin: $gap $gap 0
+      .highlight
+        margin: 0
