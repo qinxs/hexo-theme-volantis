@@ -322,3 +322,6 @@ if hexo-config('plugins.scrollreveal.enable')
 
 img
   max-width 100%
+  &.lazyload:not(.placeholder)
+    &:not(.loaded)
+      padding-bottom: 40%
