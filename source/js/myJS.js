@@ -20,7 +20,8 @@
 })();
 
 /*建站时间, 格式：月/日/年 时:分:秒*/
-var grt = new Date("06/26/2020 00:00:00");
+const grt = new Date("06/26/2020 00:00:00");
+const sitetime = document.getElementById("sitetime");
 
 function createtime() {
     var now = new Date();
@@ -35,7 +36,7 @@ function createtime() {
         }
         return i < 10 ? "0" + i : i;
     }
-    document.getElementById("sitetime").innerHTML = dnum + " 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    sitetime.innerHTML = dnum + " 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
 }
 setInterval("createtime()", 1000);
 
@@ -64,7 +65,6 @@ if(/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)){
  * @param {function} callback  回调函数
  */
 function dynamicLoadJs(url, callback) {
-    var head = document.getElementsByTagName('head')[0];
     var script = document.createElement('script');
     script.defer = true;
     script.src = url;
@@ -76,7 +76,7 @@ function dynamicLoadJs(url, callback) {
             }
         };
     }
-    head.appendChild(script);
+    document.head.appendChild(script);
 }
 
 /*特效*/
