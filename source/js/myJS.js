@@ -64,7 +64,7 @@ if(/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)){
  * @param {string} url 脚本地址
  * @param {function} callback  回调函数
  */
-function dynamicLoadJs(url, callback) {
+function loadJs(url, callback) {
     var script = document.createElement('script');
     script.defer = true;
     script.src = url;
@@ -82,7 +82,7 @@ function dynamicLoadJs(url, callback) {
 /*特效*/
 if (!/mobile/i.test(window.navigator.userAgent)) {
     /*页面点击小红心*/
-    dynamicLoadJs('https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/js/clicklove.js');
+    loadJs('https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/js/clicklove.js');
     /*飘动的彩带背景*/
-    dynamicLoadJs('https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/js/piao.js');
+    loadJs('https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/js/piao.js');
 }
