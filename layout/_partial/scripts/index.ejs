@@ -72,7 +72,7 @@
 <% } %>
 
 <% if (theme.myJS.enable) { %>
-  <% if (theme.myJS.js) { %>
+  <% if (config.use_cdn && theme.myJS.js) { %>
     <%- js(theme.myJS.js) %>
   <% } else { %>
     <%- js(['js/myJS.js']) %>
