@@ -106,7 +106,7 @@
 
       var pvCtn = document.querySelector('#lc-sv');
 
-      if (pvCtn || enableIncr) {
+      if (pvCtn && enableIncr) {
         var pvGetter = this.getRecord(Counter, '<%- config.url %>' + '/#lc-sv', 'Visits').then(function (record) {
           incrArr.push(_this.buildIncrement(record.objectId));
           var eles = document.querySelectorAll('#lc-sv #number');
@@ -127,7 +127,7 @@
 
       var uvCtn = document.querySelector('#lc-uv');
 
-      if (uvCtn || enableIncr) {
+      if (uvCtn && enableIncr) {
         var uvGetter = this.getRecord(Counter, '<%- config.url %>' + '/#lc-uv', 'Visitors').then(function (record) {
           var vuv = _this.validUV();
 
