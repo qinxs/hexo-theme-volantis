@@ -38,11 +38,11 @@ body
   font-family: $fontfamily
   font-size: $fontsize-root
   color: var(--color-text)
-  background-color: var(--color-site-bg)
-  background-image: $background-image-m
-  background-attachment: fixed
-  @media screen and (min-width: $device-mobile)
-    background-image: $background-image
+  background-image: $background-image
+  @media screen and (max-width: $device-mobile)
+    background-color: var(--color-site-bg)
+    background-image: $background-image-m
+    background-attachment: fixed
   //text-rendering: optimizelegibility
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
   line-height: $lineheight
