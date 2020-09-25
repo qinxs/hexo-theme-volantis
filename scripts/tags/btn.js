@@ -12,7 +12,7 @@ function postBtn(args) {
     url = args[2]
     icon = args[3]
   } else if (args.length > 2) {
-    if (args[2].indexOf(' fa-') > -1) {
+    if (args[2].indexOf(' fa-') > -1 || args[2].indexOf(' icon-') > -1 ) {
       // text, url, icon
       text = args[0]
       url = args[1]

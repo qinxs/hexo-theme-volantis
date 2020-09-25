@@ -18,7 +18,7 @@ function postCell(args, content) {
   let icon = ''
   let img = 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@3/img/placeholder/d570170f4f12e1ee829ca0e85a7dffeb77343a.svg'
   if (args.length > 2) {
-    if (args[2].indexOf(' fa-') > -1) {
+    if (args[2].indexOf(' fa-') > -1  || args[2].indexOf(' icon-') > -1) {
       icon = args[2].trim()
     } else {
       img = args[2].trim()
