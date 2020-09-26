@@ -116,8 +116,9 @@
     padding: 0 .5em
     border: 1px dashed rgba(68,68,68,.3)
     border-radius: 10px
-    &:hover
-      border-color: $color-theme
+    @media screen and (min-width: $device-mobile)
+      &:hover
+        border-color: $color-theme
   .vcard
     .vat
       font-size: 0.875em !important
