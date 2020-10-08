@@ -4,7 +4,7 @@
 function listennSidebarTOC() {
   var navItems = document.querySelectorAll(".toc li");
   if (!navItems.length) return;
-  var sections = [].concat(navItems).map(function (element) {
+  var sections = Array.from(navItems).map(function (element) {
     var link = element.querySelector(".toc-link");
     var target = document.getElementById(decodeURI(link.getAttribute("href")).replace("#", ""));
     link.addEventListener("click", function (event) {
