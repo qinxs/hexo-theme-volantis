@@ -10,7 +10,7 @@ function listennSidebarTOC() {
     link.addEventListener("click", (event) => {
       event.preventDefault();
       window.scrollTo({
-		top: target.offsetTop + 100,
+		top: target.offsetTop + 60,
 		<% if (theme.custom_css.toc_smooth) { %>
 		behavior: "smooth"
 		<% } %>
@@ -26,11 +26,11 @@ function listennSidebarTOC() {
       element.classList.remove("active", "active-current");
     });
     target.classList.add("active", "active-current");
-    let parent = target.parentNode;
-    while (!parent.matches(".toc")) {
-      if (parent.matches("li")) parent.classList.add("active");
-      parent = parent.parentNode;
-    }
+    // let parent = target.parentNode;
+    // while (!parent.matches(".toc")) {
+    //   if (parent.matches("li")) parent.classList.add("active");
+    //   parent = parent.parentNode;
+    // }
   }
 
   function findIndex(entries) {
@@ -54,7 +54,7 @@ function listennSidebarTOC() {
     marginTop = Math.floor(marginTop + 10000);
     let intersectionObserver = new IntersectionObserver(
       (entries, observe) => {
-        let scrollHeight = document.documentElement.scrollHeight + 100;
+        let scrollHeight = document.documentElement.scrollHeight + 60;
         if (scrollHeight > marginTop) {
           observe.disconnect();
           createIntersectionObserver(scrollHeight);
