@@ -101,3 +101,10 @@
       background-color: transparent
     td:not([class]),th:not([class])
       border: 1px solid rgb(204, 204, 204)
+
+  code
+    font-family: $fontfamily-code
+    &:not([class])
+      word-break: break-all
+      color: var(--color-inlinecode)
+      border-radius: $border-codeblock * 0.5
