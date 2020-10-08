@@ -1,31 +1,30 @@
 <script>
+"use strict";
+
 function listennSidebarTOC() {
-  const navItems = document.querySelectorAll(".toc li");
+  var navItems = document.querySelectorAll(".toc li");
   if (!navItems.length) return;
-  const sections = [...navItems].map((element) => {
-    const link = element.querySelector(".toc-link");
-    const target = document.getElementById(
-      decodeURI(link.getAttribute("href")).replace("#", "")
-    );
-    link.addEventListener("click", (event) => {
+  var sections = [].concat(navItems).map(function (element) {
+    var link = element.querySelector(".toc-link");
+    var target = document.getElementById(decodeURI(link.getAttribute("href")).replace("#", ""));
+    link.addEventListener("click", function (event) {
       event.preventDefault();
       window.scrollTo({
-		top: target.offsetTop + 60,
-		<% if (theme.custom_css.toc_smooth) { %>
-		behavior: "smooth"
-		<% } %>
-	  });
+        top: target.offsetTop + 60,
+        <% if (theme.custom_css.toc_smooth) { %>
+        behavior: "smooth"
+        <% } %>
+      });
     });
     return target;
   });
 
   function activateNavByIndex(target) {
     if (target.classList.contains("active-current")) return;
-
-    document.querySelectorAll(".toc .active").forEach((element) => {
+    document.querySelectorAll(".toc .active").forEach(function (element) {
       element.classList.remove("active", "active-current");
     });
-    target.classList.add("active", "active-current");
+    target.classList.add("active", "active-current"); 
     // let parent = target.parentNode;
     // while (!parent.matches(".toc")) {
     //   if (parent.matches("li")) parent.classList.add("active");
@@ -34,12 +33,14 @@ function listennSidebarTOC() {
   }
 
   function findIndex(entries) {
-    let index = 0;
-    let entry = entries[index];
+    var index = 0;
+    var entry = entries[index];
+
     if (entry.boundingClientRect.top > 0) {
       index = sections.indexOf(entry.target);
       return index === 0 ? 0 : index - 1;
     }
+
     for (; index < entries.length; index++) {
       if (entries[index].boundingClientRect.top <= 0) {
         entry = entries[index];
@@ -47,31 +48,32 @@ function listennSidebarTOC() {
         return sections.indexOf(entry.target);
       }
     }
+
     return sections.indexOf(entry.target);
   }
 
   function createIntersectionObserver(marginTop) {
     marginTop = Math.floor(marginTop + 10000);
-    let intersectionObserver = new IntersectionObserver(
-      (entries, observe) => {
-        let scrollHeight = document.documentElement.scrollHeight + 60;
-        if (scrollHeight > marginTop) {
-          observe.disconnect();
-          createIntersectionObserver(scrollHeight);
-          return;
-        }
-        let index = findIndex(entries);
-        activateNavByIndex(navItems[index]);
-      },
-      {
-        rootMargin: marginTop + "px 0px -100% 0px",
-        threshold: 0,
+    var intersectionObserver = new IntersectionObserver(function (entries, observe) {
+      var scrollHeight = document.documentElement.scrollHeight + 60;
+
+      if (scrollHeight > marginTop) {
+        observe.disconnect();
+        createIntersectionObserver(scrollHeight);
+        return;
       }
-    );
-    sections.forEach((element) => {
+
+      var index = findIndex(entries);
+      activateNavByIndex(navItems[index]);
+    }, {
+      rootMargin: marginTop + "px 0px -100% 0px",
+      threshold: 0
+    });
+    sections.forEach(function (element) {
       element && intersectionObserver.observe(element);
     });
   }
+
   createIntersectionObserver(document.documentElement.scrollHeight);
 }
 
