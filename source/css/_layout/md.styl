@@ -105,6 +105,11 @@
   code
     font-family: $fontfamily-code
     &:not([class])
-      word-break: break-all
+      word-wrap: break-word
       color: var(--color-inlinecode)
-      border-radius: $border-codeblock * 0.5
+      margin: 0 2px
+      padding: 0 4px
+      border-radius: 4px
+      font-size: 14px
+      background-color: rgba(27,31,35,.05);
+      word-break: break-all
