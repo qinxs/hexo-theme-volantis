@@ -135,3 +135,9 @@
           opacity: 1
   .vquote
     padding-left: 0 !important
+
+// fancybox 移动端不显示左右箭头
+@media screen and (max-width: $device-mobile)
+  .fancybox-navigation
+    .fancybox-button--arrow_left,.fancybox-button--arrow_right
+      visibility: hidden !important
