@@ -3,7 +3,7 @@
 /*一言*/
 (function() {
     var isMobile = /mobile/i.test(window.navigator.userAgent);
-    var max_length = isMobile ? 9 : 20;
+    var max_length = isMobile ? 10 : 20;
     fetch('https://v1.hitokoto.cn/?max_length=' + max_length)
         .then(function(res) {
             return res.json();
