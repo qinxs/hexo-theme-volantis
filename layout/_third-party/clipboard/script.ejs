@@ -13,7 +13,7 @@
 		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
         var copyHtml = '';
         copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '<i class="iconfont icon-copy"></i><span>COPY</span>';
         copyHtml += '</button>';
         $(".highlight .code pre").before(copyHtml);
         $(".article pre code").before(copyHtml);
@@ -21,13 +21,13 @@
             var $btn = $(e.trigger);
             $btn.addClass('copied');
             var $icon = $($btn.find('i'));
-            $icon.removeClass('fa-copy');
+            $icon.removeClass('icon-copy');
             $icon.addClass('fa-check-circle');
             var $span = $($btn.find('span'));
             $span[0].innerText = 'COPIED';
             wait(function () {
                 $icon.removeClass('fa-check-circle');
-                $icon.addClass('fa-copy');
+                $icon.addClass('icon-copy');
                 $span[0].innerText = 'COPY'
             }, 2000)
         });
@@ -36,13 +36,13 @@
             var $btn = $(e.trigger);
             $btn.addClass('copy-failed');
             var $icon = $($btn.find('i'));
-            $icon.removeClass('fa-copy');
+            $icon.removeClass('icon-copy');
             $icon.addClass('fa-times-circle');
             var $span = $($btn.find('span'));
             $span[0].innerText = 'COPY FAILED';
             wait(function () {
                 $icon.removeClass('fa-times-circle');
-                $icon.addClass('fa-copy');
+                $icon.addClass('icon-copy');
                 $span[0].innerText = 'COPY'
             }, 2000)
         })
