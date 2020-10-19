@@ -342,3 +342,41 @@
       &:last-child
         display inline-block
         float right
+
+#hot-comments
+  min-height: 300px
+  .hot-comments-card
+    display: flex
+    align-items: center
+    .list-avatar
+      width: 40px
+      height: 40px
+      flex-basis: 48px
+      border-radius: 50%
+      box-shadow: 0 .125rem 1.0625rem 0 rgba(0,0,0,.1)
+    .w100
+      width: 100%
+      padding: 10px 0 10px 10px
+    .hot-comments-meta
+      display: flex
+      justify-content: space-between
+      span
+        color: $color-meta
+        white-space: nowrap
+    .list-author, .list-content
+      display: -webkit-box
+      word-break: break-all
+      -webkit-box-orient: vertical
+      overflow: hidden
+    .list-author
+      -webkit-line-clamp: 1
+      font-weight: bold
+      color: $color-meta
+    a.list-author:hover
+      color: $color-hover
+    .list-content
+      -webkit-line-clamp: 5
+      color: $color-text
+      trans()
+      &:hover
+        color: $color-hover

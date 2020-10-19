@@ -1,3 +1,5 @@
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/blueimp-md5/1.0.1/js/md5.min.js"></script>
 <% if (theme.comments.valine.js) { %>
   <%- js(theme.comments.valine.js) %>
 <% } else { %>
@@ -67,7 +69,132 @@
     })
   }
 
+   
+  function newcomment() {
+ 
+    function queryLeanCloud(k) {
+      var root = this;
+      var len = arguments.length;
+      if (len == 1) {
+        var notExist = new AV.Query("Comment");
+        notExist.doesNotExist('rid');
+        var isEmpty = new AV.Query("Comment");
+        isEmpty.equalTo('rid', '');
+        var q = AV.Query.or(notExist, isEmpty);
+        //非本页评论
+        q.notEqualTo('url', window.location.pathname);
+        if (k === '*') q.exists('url');
+        else q.equalTo('url', decodeURI(k));
+        q.addDescending('createdAt');
+        q.addDescending('insertedAt');
+        return q;
+      } else {
+        var ids = JSON.stringify(arguments[1]).replace(/(\[|\])/g, '');
+        var cql = `select * from ${root['config']['clazzName']} where rid in (${ids}) order by -createdAt`;
+        return AV.Query.doCloudQuery(cql)
+      }
+    }
+
+    var valine = new Valine({
+      el: '#valine_container_ba',
+      app_id: '<%= theme.comments.valine.appId %>',
+      app_key: '<%= theme.comments.valine.appKey %>',
+      placeholder: '',
+      serverURLs: '<%= theme.comments.valine.api %>'
+    });
+ 
+    //判断博主，heson改为自己的昵称
+    function bozhu(e){
+      if (e == "qinxs"){
+        nick = e + '[博主]'
+        return nick;
+      } else {
+        return e
+      }
+    }
+ 
+   //判断网址
+   function wangzhi(e){
+        http = e.slice(0,4)
+        https = e.slice(0,5)
+        if (http == "http" || https == "https" ){
+             return e
+        } else if (e == "" || e == null || e == undefined){
+          return e
+        } else {
+          e = 'http://'+ e
+          return e
+        }
+    }
+ 
+    //获取头像
+   function getAvater(mail){
+       var a = mail.slice(-5,-6)
+       // return '//v1.alapi.cn/api/avatar?email='+mail+'&size=100'
+       return '//sdn.geekzu.org/avatar/'+md5(mail)+'?d=robohash'
+   }
+
+   function timeago(dateTimeStamp) { 
+     var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示 
+     var hour = minute * 60; 
+     var day = hour * 24; 
+     var week = day * 7; 
+     var month = day * 30; 
+     var now = new Date().getTime(); //获取当前时间毫秒 
+     var diffValue = now - dateTimeStamp; //时间差 
+     if (diffValue < 0) { 
+         return; 
+     } 
+     var minC = diffValue / minute; //计算时间差的分，时，天，周，月 
+     var hourC = diffValue / hour; 
+     var dayC = diffValue / day; 
+     var weekC = diffValue / week; 
+     var monthC = diffValue / month; 
+     if (monthC >= 1 && monthC <= 3) { 
+         result = " " + parseInt(monthC) + " 月前" 
+     } else if (weekC >= 1 && weekC <= 3) { 
+         result = " " + parseInt(weekC) + " 周前" 
+     } else if (dayC >= 1 && dayC <= 6) { 
+         result = " " + parseInt(dayC) + " 天前" 
+     } else if (hourC >= 1 && hourC <= 23) { 
+         result = " " + parseInt(hourC) + " 小时前" 
+     } else if (minC >= 1 && minC <= 59) { 
+         result = " " + parseInt(minC) + " 分钟前" 
+     } else if (diffValue >= 0 && diffValue <= minute) { 
+         result = "刚刚" 
+     } else { 
+         var datetime = new Date(); 
+         datetime.setTime(dateTimeStamp); 
+         var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1; 
+         var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate(); 
+         result = Nmonth + "-" + Ndate 
+     } 
+     return result; 
+ } 
+
+    //查询评论
+    queryLeanCloud('*').limit(7).find().then(function (comments) {
+      var hotComments = $("#hot-comments");
+      for (var i = 0; i < comments.length; i++) {
+        // if (i === 0) {
+        //   console.log(comments[0]);
+        // }
+        var nick = bozhu(comments[i]._serverData.nick);
+        var content = comments[i]._serverData.comment;
+        var newcontent = content.replace(/<[^>]+>/g,"").substring(0, 50);
+        var url = comments[i]._serverData.url;
+        var mail = getAvater(comments[i]._serverData.mail);
+        var link = wangzhi(comments[i]._serverData.link);
+        var updatedAt = timeago(comments[i].updatedAt);
+        var commentId = '#' + comments[i].id;
+        var _nickDom = link ? '<a class="list-author" target="_blank" rel="noopener external nofollow noreferrer" href="' + link + '">' + nick + '</a>' : '<span class="list-author">' + nick + '</span>';
+        hotComments.append('<li class="hot-comments-card"><img class="list-avatar" src="'+mail+'"><div class="w100"><div class="hot-comments-meta"><div title="' + nick + '">' + _nickDom + '</div><span>' + updatedAt + '</span></div> <a href="' + url + commentId +'"><div class="list-content">' + newcontent + '</div></a></div></li>');
+      }
+    });
+  };  
+
   $(function () {
     pjax_valine();
+    newcomment();
   });
 </script>
