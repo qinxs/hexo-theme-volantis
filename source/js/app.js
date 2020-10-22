@@ -236,7 +236,7 @@ var Debounce = (fn, t) =>{
 		// 手机端 滚动时隐藏子菜单
 		$(window).scroll(Debounce(() =>{
 			volantis.$mPhoneList.hide();
-		}));
+		}, 25));
 	}
 	// 设置导航栏搜索框   fix √
 	function setHeaderSearch() {
