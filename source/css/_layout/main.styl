@@ -1,5 +1,5 @@
 #safearea
-  margin: $gap*0.5 0
+  margin: $gap*0.75 $gap*0.5
 #l_body
   position: relative
   if hexo-config('custom_css.font_smoothing') == true
@@ -29,14 +29,14 @@
     &.show
       transform: translateY(0) scale(1)
       &.hl
-        background: $color-theme
+        background: var(--color-color-theme)
         color: $color-inner
         box-shadow: $boxshadow-card
     @media screen and (min-width: $device-tablet)
       &:hover
         transform: scale(1.2)
         border-radius: 25%
-        background: $color-theme
+        background: var(--color-color-theme)
         color: white
         box-shadow: $boxshadow-card-float
         &.hl
