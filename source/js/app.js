@@ -348,7 +348,7 @@ var Debounce = (fn, t) =>{
 		var checkExist = setInterval(function() {
 			if ($("#" + decodeURI(window.location.hash.split("#")[1]).replace(/\ /g, "-")).length) {
 				$('html, body').animate({
-					scrollTop: $("#" + decodeURI(window.location.hash.split("#")[1]).replace(/\ /g, "-")).offset().top - 40
+					scrollTop: $("#" + decodeURI(window.location.hash.split("#")[1]).replace(/\ /g, "-")).offset().top + 50
 				},
 				500);
 				clearInterval(checkExist);

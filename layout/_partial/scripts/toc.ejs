@@ -10,7 +10,7 @@ function listennSidebarTOC() {
     link.addEventListener("click", function (event) {
       event.preventDefault();
       window.scrollTo({
-        top: target.offsetTop + 60,
+        top: target.offsetTop + 100,
         <% if (theme.custom_css.toc_smooth) { %>
         behavior: "smooth"
         <% } %>
@@ -55,7 +55,7 @@ function listennSidebarTOC() {
   function createIntersectionObserver(marginTop) {
     marginTop = Math.floor(marginTop + 10000);
     var intersectionObserver = new IntersectionObserver(function (entries, observe) {
-      var scrollHeight = document.documentElement.scrollHeight + 60;
+      var scrollHeight = document.documentElement.scrollHeight + 100;
 
       if (scrollHeight > marginTop) {
         observe.disconnect();
