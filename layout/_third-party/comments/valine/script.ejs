@@ -39,9 +39,9 @@
   function pjax_valine() {
     if(!document.querySelectorAll("#valine_container")[0])return;
 
-    var pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) || "<%= theme.comments.valine.placeholder %>";
+    var pagePlaceholder = pdata.commentPlaceholder || "<%= theme.comments.valine.placeholder %>";
 
-    var path = $.trim($('#pjax-comment-path').text());
+    var path = pdata.commentPath;
     if (path.length == 0) {
       var defaultPath = '<%= theme.comments.valine.path %>';
       path = defaultPath || decodeURI(window.location.pathname);

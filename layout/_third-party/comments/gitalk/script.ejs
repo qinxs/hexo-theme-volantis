@@ -3,7 +3,7 @@
   function pjax_gitalk() {
     if(!document.querySelectorAll("#gitalk-container")[0])return;
 
-    var path = $.trim($('#pjax-comment-path').text());
+    var path = pdata.commentPath;
     if (path.length == 0) {
       var defaultPath = '<%= theme.comments.gitalk.path %>';
       path = defaultPath || decodeURI(window.location.pathname);
