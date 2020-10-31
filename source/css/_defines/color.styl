@@ -44,7 +44,6 @@ $color-selection = convert(hexo-config('color_scheme.common.selection'))
 // -------- 动态配色方案 --------
 // 默认浅色
 $color-site-bg = convert(hexo-config('color_scheme.light.site_bg'))
-$color-hover-bg = convert(hexo-config('color_scheme.light.hover_bg'))
 $color-site-inner = convert(hexo-config('color_scheme.light.site_inner'))
 $color-site-footer = convert(hexo-config('color_scheme.light.site_footer'))
 $color-card = convert(hexo-config('color_scheme.light.card'))
@@ -72,7 +71,7 @@ bgcolor($c, $mix = 10)
   return mix($c, $color-card, $mix)
 
 list_active()
-  color: var(--color-list-hl)
+  color: var(--color-p)
 list_hover()
-  color: var(--color-list-hl)
-  background: var(--color-hover-bg)
+  //color: var(--color-list-hl)
+  background: alpha($color-hover, .15)

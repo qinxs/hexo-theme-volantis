@@ -31,7 +31,7 @@ article#arc
         margin-left: 14px
       &:hover
         color: var(--color-p)
-        background: var(--color-hover-bg)
+        background: alpha($color-hover, .15)
       time
         color: var(--color-meta)
         margin-left: $gap * 0.25 + 30px
@@ -98,7 +98,7 @@ article#tag
           display: inline-block
           color: var(--color-list)
           padding: 4px 52px 4px 16px
-          background: var(--color-block)
+          background: alpha($color-theme, .1)
           font-weight: 500
           &:hover
             background: $color-hover
