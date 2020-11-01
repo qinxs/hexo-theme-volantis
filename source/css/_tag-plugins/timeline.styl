@@ -13,7 +13,10 @@ div.timenode
   &:after
     top: 26px
     height: "calc(100% - %s)" % 26px
-  &:last-child
+  &:first-of-type
+    &:before
+      height: 0
+  &:last-of-type
     &:after
       height: "calc(100% - 26px - %s)" % $gap
       border-bottom-left-radius: 2px
@@ -38,7 +41,7 @@ div.timenode
       border-radius: 8px
     &:after
       background: $color-theme
-      margin-left: 2px
+      left: 0
       margin-top: 2px
       width: 12px
       height: 12px
