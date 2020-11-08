@@ -76,16 +76,6 @@
   <%- js(['js/app.js']) %>
 <% } %>
 
-<% if (theme.search.enable) { %>
-  <% if (theme.search.js) { %>
-    <%- js(theme.search.js) %>
-  <% } else if(config.use_cdn) { %>
-  <%- js(['https://cdn.jsdelivr.net/npm/hexo-theme-volantis@'+theme.info.theme_version+'/source/js/search.min.js']) %>
-  <% } else { %>
-    <%- js(['js/search.js']) %>
-  <% } %>
-<% } %>
-
 <% if (theme.myJS.enable) { %>
   <% if (config.use_cdn && theme.myJS.js) { %>
     <%- js(theme.myJS.js) %>
