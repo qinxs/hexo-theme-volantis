@@ -32,6 +32,8 @@ pre
     &.stylus:before
       content: "Stylus"
 
+    &.bat:before
+      content: "bat"
     &.bash:before
       content: "bash"
     &.shell:before
@@ -93,6 +95,9 @@ pre
     figcaption
       trans()
       background: darken($color-codeblock, 5%)
+    >table .code:before
+      opacity: 0
+
   figcaption
     font-size: 13px
     position: sticky
@@ -176,6 +181,8 @@ pre
     &.stylus .code:before
       content: "Stylus"
 
+    &.bat .code:before
+      content: "bat"
     &.bash .code:before
       content: "bash"
     &.shell .code:before

@@ -14,21 +14,19 @@ if hexo-config('custom_css.body.highlight.copy_btn') == true
     font-family: Menlo, $fontfamily-code
     font-size: 11px
     font-weight: bold
-    padding: $gap * 0.25 $gap * 0.5
+    padding: $gap * 0.125 $gap * 0.375
+    line-height: 2em
     >i
       margin-right: 4px
     color: var(--color-meta)
-    background: var(--color-card)
-    border-radius: 3px
-    box-shadow: $boxshadow-card
+    background: transparent
     position: absolute
-    top: 1px
-    right: 1px
+    top: 0
+    right: 0
     opacity: 0
     trans()
     &:hover
       color: $color-hover
-      background: bgcolor($color-hover)
 
   .highlight:hover .btn-copy
     opacity: 1
