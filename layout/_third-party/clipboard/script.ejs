@@ -13,37 +13,37 @@
 		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
         var copyHtml = '';
         copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-        copyHtml += '<i class="iconfont icon-copy"></i><span>COPY</span>';
+        copyHtml += '<i class="iconfont icon-copy"></i><span>复制</span>';
         copyHtml += '</button>';
         $(".highlight .code pre").before(copyHtml);
         $(".article pre code").before(copyHtml);
         clipboard.off('success').on('success', function (e) {
+            e.clearSelection();
             var $btn = $(e.trigger);
             $btn.addClass('copied');
             var $icon = $($btn.find('i'));
             $icon.removeClass('icon-copy');
             $icon.addClass('fa-check-circle');
             var $span = $($btn.find('span'));
-            $span[0].innerText = 'COPIED';
+            $span[0].innerText = '复制成功';
             wait(function () {
                 $icon.removeClass('fa-check-circle');
                 $icon.addClass('icon-copy');
-                $span[0].innerText = 'COPY'
+                $span[0].innerText = '复制'
             }, 2000)
         });
         clipboard.off('error').on('error', function (e) {
-            e.clearSelection();
             var $btn = $(e.trigger);
             $btn.addClass('copy-failed');
             var $icon = $($btn.find('i'));
             $icon.removeClass('icon-copy');
             $icon.addClass('fa-times-circle');
             var $span = $($btn.find('span'));
-            $span[0].innerText = 'COPY FAILED';
+            $span[0].innerText = '复制失败';
             wait(function () {
                 $icon.removeClass('fa-times-circle');
                 $icon.addClass('icon-copy');
-                $span[0].innerText = 'COPY'
+                $span[0].innerText = '复制'
             }, 2000)
         })
     }
