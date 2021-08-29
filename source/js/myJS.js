@@ -19,12 +19,21 @@
         })
 })();
 
-/*建站时间, 格式：月/日/年 时:分:秒*/
-const grt = new Date("06/26/2020 00:00:00");
+
 const sitetime = document.getElementById("sitetime");
 
 function createtime() {
+    /*建站时间, 格式：月/日/年 时:分:秒*/
+    var grt = new Date("06/26/2020 00:00:00");
     var now = new Date();
+    var now_year = now.getFullYear()
+    var ynum = now_year - grt.getFullYear()
+    if (grt.setFullYear(now_year) > now.getTime()) {
+        ynum--
+        grt.setFullYear(now_year -1)
+    } else {
+        grt.setFullYear(now_year)
+    }
     var dnum = Math.floor((now - grt) / (24 * 3600 * 1000));
     var hnum = checkTime(now.getHours() - grt.getHours(), "h");
     var mnum = checkTime(now.getMinutes() - grt.getMinutes());
@@ -36,7 +45,8 @@ function createtime() {
         }
         return i < 10 ? "0" + i : i;
     }
-    sitetime.innerHTML = dnum + " 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    var ystr = ynum > 0 ? ynum + ' 年' : ''
+    sitetime.innerHTML = `${ystr} ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒`;
 }
 setInterval("createtime()", 1000);
 
