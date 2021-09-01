@@ -17,14 +17,14 @@ pre
     &.md:before,&.markdown:before
       content: "md"
     &.yaml:before
-      content: "YAML"
+      content: "Yaml"
     &.json:before
       content: "JSON"
 
     &.html:before
       content: "HTML"
     &.js:before,&.javascript:before
-      content: "JS"
+      content: "JavaScript"
     &.css:before
       content: "CSS"
     &.less:before
@@ -33,11 +33,11 @@ pre
       content: "Stylus"
 
     &.bat:before
-      content: "bat"
+      content: "Bat"
     &.bash:before
-      content: "bash"
+      content: "Bash"
     &.shell:before
-      content: "shell"
+      content: "Shell"
     &.sh:before
       content: "sh"
     &.ini:before
@@ -95,8 +95,6 @@ pre
     figcaption
       trans()
       background: darken($color-codeblock, 5%)
-    >table .code:before
-      opacity: 0
 
   figcaption
     font-size: 13px
@@ -126,7 +124,7 @@ pre
 
     .gutter
       disable-user-select()
-      padding: 0 6px
+      // padding: 0 6px
       text-align: right
       border-width: 0
       margin-left: 0
@@ -136,34 +134,43 @@ pre
       // background: darken($color-block, 5)
       pre
         color: var(--color-meta)
+        border-right: 1px solid #4e4e53;
+        padding: 0 7px 0 6px;
+        border-radius: initial;
 
 
     pre
       background: transparent
-      margin: 0
+      margin: 28px 0 0
       padding: 0
       border: none
       .code:before
         display: none
 
     .code
-      padding: $gap * 1.25 $gap
+      padding: $gap
       vertical-align: top
       background-color: transparent
       &:before
-        content: ""
+        content: "Txt"
         position: absolute
         top: 0
         right: 0
+        bottom: 100%
+        left: 0
+        padding-left: 1em
+        height: 32px
+        line-height: 32px
         color: var(--color-meta)
+        background: #4e4e53
+        font-weight: bold
         font-size: 13px
-        padding: 4px 8px
 
   if hexo-config('custom_css.body.highlight.language') == true
     &.md .code:before,&.markdown .code:before
       content: "md"
     &.yaml .code:before
-      content: "YAML"
+      content: "Yaml"
     &.json .code:before
       content: "JSON"
 
@@ -173,7 +180,7 @@ pre
     &.html .code:before
       content: "HTML"
     &.js .code:before,&.javascript .code:before
-      content: "JS"
+      content: "JavaScript"
     &.css .code:before
       content: "CSS"
     &.less .code:before
@@ -182,11 +189,11 @@ pre
       content: "Stylus"
 
     &.bat .code:before
-      content: "bat"
+      content: "Bat"
     &.bash .code:before
-      content: "bash"
+      content: "Bash"
     &.shell .code:before
-      content: "shell"
+      content: "Shell"
     &.sh .code:before
       content: "sh"
     &.ini .code:before

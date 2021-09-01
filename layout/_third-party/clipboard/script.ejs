@@ -27,6 +27,7 @@
             var $span = $($btn.find('span'));
             $span[0].innerText = '复制成功';
             wait(function () {
+                $btn.removeClass('copied');
                 $icon.removeClass('fa-check-circle');
                 $icon.addClass('icon-copy');
                 $span[0].innerText = '复制'

@@ -12,10 +12,10 @@ if hexo-config('custom_css.body.highlight.copy_btn') == true
     disable-user-select()
     -webkit-appearance: none
     font-family: Menlo, $fontfamily-code
-    font-size: 11px
-    font-weight: bold
-    padding: $gap * 0.125 $gap * 0.375
-    line-height: 2em
+    font-size: 12px
+    padding-right: 0.75em
+    height: 32px
+    line-height: 32px
     >i
       margin-right: 4px
     color: var(--color-meta)
@@ -23,13 +23,8 @@ if hexo-config('custom_css.body.highlight.copy_btn') == true
     position: absolute
     top: 0
     right: 0
-    opacity: 0
     trans()
-    &:hover
+    &:hover, &.copied
       color: $color-hover
-
-  .highlight:hover .btn-copy
-    opacity: 1
-
-  .article pre:hover .btn-copy
-    opacity: 1
+    .icon-copy
+      font-size: 15px
