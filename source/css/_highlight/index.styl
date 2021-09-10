@@ -134,8 +134,9 @@ pre
       // background: darken($color-block, 5)
       pre
         color: var(--color-meta)
-        border-right: 1px solid #4e4e53;
-        padding: 0 7px 0 6px;
+        border-right: 1px dashed #4e4e53;
+        padding: 0 10px 0 12px;
+        -webkit-padding-before: 2px
         border-radius: initial;
 
 
@@ -149,6 +150,7 @@ pre
 
     .code
       padding: $gap
+      -webkit-padding-before: $gap + 2px
       vertical-align: top
       background-color: transparent
       &:before
@@ -158,12 +160,13 @@ pre
         right: 0
         bottom: 100%
         left: 0
+        -webkit-padding-before: 1px
         padding-left: 1em
         height: 32px
         line-height: 32px
         color: var(--color-meta)
         background: #4e4e53
-        font-weight: bold
+        //font-weight: bold
         font-size: 13px
 
   if hexo-config('custom_css.body.highlight.language') == true

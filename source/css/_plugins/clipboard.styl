@@ -11,20 +11,20 @@ if hexo-config('custom_css.body.highlight.copy_btn') == true
     border: none
     disable-user-select()
     -webkit-appearance: none
-    font-family: Menlo, $fontfamily-code
     font-size: 12px
     padding-right: 0.75em
     height: 32px
     line-height: 32px
     >i
-      margin-right: 4px
+      margin-right: 2px
     color: var(--color-meta)
     background: transparent
     position: absolute
-    top: 0
+    top: -1px
     right: 0
     trans()
     &:hover, &.copied
       color: $color-hover
     .icon-copy
       font-size: 15px
+      font-weight: bold
