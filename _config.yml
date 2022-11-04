@@ -472,7 +472,7 @@ site_footer:
 plugins:
   ################ required plugins ################
   # jquery
-  jquery: https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js
+  jquery: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.5.1/jquery.min.js
   # fontawesome
   fontawesome: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css
   ################ optional plugins ################
@@ -516,7 +516,7 @@ plugins:
   # Codeblock Copy Button
   clipboard:
     enable: #true
-    js: https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js
+    js: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/clipboard.js/2.0.10/clipboard.min.js
 
   ######## Plugins for SEO:
 
@@ -577,7 +577,7 @@ plugins:
   aplayer:
     enable: #true
     js:
-      - https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js
+      - https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.0/APlayer.min.js
       - https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js
     # Required
     server: netease   # netease, tencent, kugou, xiami, baidu
