@@ -15,25 +15,8 @@
     return REQUIRED_FIELDS.indexOf(item) > -1
   });
 
-  function emoji(path, idx, ext) {
-    return path + "/" + path + "-" + idx + "." + ext;
-  }
-
-  var emojiMaps = {};
-  for (var i = 1; i <= 54; i++) {
-    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
-  }
-  for (var i = 1; i <= 101; i++) {
-    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
-  }
-  for (var i = 1; i <= 116; i++) {
-    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
-  }
-  for (var i = 1; i <= 125; i++) {
-    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
-  }
-  for (var i = 1; i <= 4; i++) {
-    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  function emoji(path, fallname) {
+    return path + "/" + fallname;
   }
 
   function pjax_valine() {
@@ -48,25 +31,38 @@
     }
 
     var valine = new Valine();
-    valine.init({
-      el: '#valine_container',
-      meta: meta,
-      placeholder: pagePlaceholder,
-      path: path,
-      appId: "<%= theme.comments.valine.appId %>",
-      appKey: "<%= theme.comments.valine.appKey %>",
-      pageSize: '<%= theme.comments.valine.pageSize %>',
-      avatar: '<%= theme.comments.valine.avatar %>',
-      lang: '<%= theme.comments.valine.lang %>',
-      visitor: '<%= theme.comments.valine.visitor %>',
-      highlight: '<%= theme.comments.valine.highlight %>',
-      mathJax: '<%= theme.comments.valine.mathJax %>',
-      enableQQ: '<%= theme.comments.valine.enableQQ %>',
-      recordIP: <%= theme.comments.valine.recordIP %>,
-      requiredFields: requiredFields,
-      emojiCDN: 'https://cdn.staticaly.com/gh/volantis-x/cdn-emoji@master/valine/',
-      emojiMaps: emojiMaps
-    })
+
+    fetch('https://cdn.jsdelivr.net/gh/qinxs/cdn-emoji@master/douyin/_list.txt')
+      .then((response) => response.text())
+      .then((text) => {
+          var emojiMaps = {};
+          var emojiArr = text.split(/\r?\n/);
+          emojiArr.forEach(item => {
+              if (item) {
+                emojiMaps['dy-' + item.substring(0, item.lastIndexOf("."))] = emoji('douyin', item);
+              }
+          });
+      
+          valine.init({
+            el: '#valine_container',
+            meta: meta,
+            placeholder: pagePlaceholder,
+            path: path,
+            appId: "<%= theme.comments.valine.appId %>",
+            appKey: "<%= theme.comments.valine.appKey %>",
+            pageSize: '<%= theme.comments.valine.pageSize %>',
+            avatar: '<%= theme.comments.valine.avatar %>',
+            lang: '<%= theme.comments.valine.lang %>',
+            visitor: '<%= theme.comments.valine.visitor %>',
+            highlight: '<%= theme.comments.valine.highlight %>',
+            mathJax: '<%= theme.comments.valine.mathJax %>',
+            enableQQ: '<%= theme.comments.valine.enableQQ %>',
+            recordIP: <%= theme.comments.valine.recordIP %>,
+            requiredFields: requiredFields,
+            emojiCDN: 'https://cdn.staticaly.com/gh/qinxs/cdn-emoji@master/',
+            emojiMaps: emojiMaps
+          });
+      });
   }
 
   $(function () {
