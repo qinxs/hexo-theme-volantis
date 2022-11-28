@@ -151,7 +151,7 @@
       var allPV = document.querySelectorAll('#lc-pv');
 
       if (allPV.length > 0 || enableIncr) {
-        for (i = 0; i < allPV.length; i++) {
+        for (let i = 0; i < allPV.length; i++) {
           var pv = allPV[i];
           var title = pv.getAttribute('data-title');
           var url = '<%- config.url %>' + pv.getAttribute('data-path');
