@@ -41,8 +41,6 @@ body
   font-size: $fontsize-root
   letter-spacing: .034em
   color: var(--color-text)
-  background-color: var(--color-site-bg)
-  background-image: $background-image
   background-attachment: fixed
   //@media screen and (max-width: $device-mobile)
     //background-image: $background-image-m
@@ -60,6 +58,13 @@ body
       bottom: 0
       left: 0
 
+.background-layer
+  position: fixed
+  width: 100vw
+  height: 100vh
+  //background-size: contain
+  background-image: $background-image
+  z-index: -1
 
 
 ::-moz-selection {
