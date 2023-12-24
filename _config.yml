@@ -577,8 +577,8 @@ plugins:
   aplayer:
     enable: #true
     js:
-      - https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.0/APlayer.min.js
-      - https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js
+      - https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js
+      - https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js
     # Required
     server: netease   # netease, tencent, kugou, xiami, baidu
     type: playlist    # song, playlist, album, search, artist
