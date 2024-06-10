@@ -71,7 +71,7 @@
 <% if (config.use_cdn && theme.info.cdn && theme.info.cdn.js) { %>
   <%- js(theme.info.cdn.js) %>
 <% } else if(config.use_cdn) { %>
-  <%- js(['https://cdn.jsdelivr.net/npm/hexo-theme-volantis@'+theme.info.theme_version+'/source/js/app.min.js']) %>
+  <%- js(['https://gcore.jsdelivr.net/npm/hexo-theme-volantis@'+theme.info.theme_version+'/source/js/app.min.js']) %>
 <% } else { %>
   <%- js(['js/app.js']) %>
 <% } %>

@@ -92,5 +92,5 @@ function loadJs(url, callback) {
 /*特效*/
 if (!/mobile/i.test(window.navigator.userAgent)) {
     /*页面点击小红心-飘动的彩带背景*/
-    loadJs('https://cdn.jsdelivr.net/gh/qinxs/cdn-assets/js/clicklove-piao.js');
+    loadJs('https://gcore.jsdelivr.net/gh/qinxs/cdn-assets/js/clicklove-piao.js');
 }
